@@ -5,100 +5,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مدرسة سراج التعليمية</title>
+
 <style>
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f8ff;
-  color: #263653;
-}
-header {
-  background: #174b80;
-  color: white;
+  background: #f3f8ff;
+  color: #24344d;
   text-align: center;
-  padding: 35px 15px;
 }
-header h1 { font-size: 30px; }
-header p { font-size: 19px; }
+
+header {
+  background: linear-gradient(135deg, #1769aa, #55b8e8);
+  color: white;
+  padding: 30px 15px;
+}
+
+header h1 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+header p {
+  font-size: 18px;
+}
+
 nav {
   background: white;
-  padding: 15px;
-  text-align: center;
+  padding: 15px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px #ccc;
 }
+
 nav a {
-  color: #174b80;
+  display: inline-block;
+  color: #1769aa;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 7px;
+}
+
+nav a:hover {
+  color: #e65b9b;
+}
+
+section {
+  padding: 45px 18px;
+  margin: 15px auto;
+  max-width: 900px;
+}
+
+h2 {
+  color: #1769aa;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 15px auto;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px #d6e3f0;
+}
+
+.btn {
+  display: inline-block;
+  background: #1769aa;
+  color: white;
+  padding: 13px 25px;
+  border-radius: 25px;
   text-decoration: none;
   margin: 10px;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
-main {
-  max-width: 850px;
-  margin: 30px auto;
-  padding: 15px;
+
+.btn:hover {
+  background: #e65b9b;
 }
-section {
-  background: white;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px #dce5f1;
-}
-h2 { color: #174b80; }
-.card {
-  background: #eaf3ff;
-  padding: 15px;
-  border-radius: 10px;
-  margin: 10px 0;
-}
+
 footer {
-  background: #174b80;
+  background: #1769aa;
   color: white;
-  text-align: center;
-  padding: 22px;
+  padding: 25px;
+  margin-top: 30px;
 }
 </style>
 </head>
+
 <body>
 
-<header>
-<h1>مدرسة سراج التعليمية</h1>
-<p>مدرستنا طريقنا نحو النجاح</p>
+<header id="home">
+  <h1>🌟 مدرسة سراج التعليمية 🌟</h1>
+  <p>مدرستنا طريقنا نحو النجاح</p>
+  <a href="#services" class="btn">اكتشف خدماتنا</a>
 </header>
 
 <nav>
-<a href="#home">الرئيسية</a>
-<a href="#about">من نحن</a>
-<a href="#services">خدماتنا</a>
-<a href="#contact">اتصل بنا</a>
+  <a href="#home">الرئيسية</a>
+  <a href="#about">من نحن</a>
+  <a href="#services">خدماتنا</a>
+  <a href="#lessons">الدروس</a>
+  <a href="#contact">اتصل بنا</a>
 </nav>
 
-<main>
-<section id="home">
-<h2>مرحبًا بكم في مدرسة سراج التعليمية</h2>
-<p>فضاء تعليمي يهدف إلى تنمية قدرات التلاميذ ومرافقتهم نحو التفوق والنجاح.</p>
-</section>
-
 <section id="about">
-<h2>من نحن؟</h2>
-<p>مدرسة سراج التعليمية فضاء للتعلم والاجتهاد، نؤمن بأن كل طفل قادر على النجاح عندما يجد التوجيه والرعاية المناسبين.</p>
+  <div class="card">
+    <h2>📚 من نحن؟</h2>
+    <p>
+      مرحباً بكم في مدرسة سراج التعليمية.
+      فضاء للتعلم والإبداع والتميز،
+      نرافق أبناءنا في طريق النجاح والتفوق.
+    </p>
+  </div>
 </section>
 
 <section id="services">
-<h2>خدماتنا التعليمية</h2>
-<div class="card">📚 دروس الدعم والمراجعة</div>
-<div class="card">✏️ تمارين وتطبيقات تعليمية</div>
-<div class="card">🌟 مرافقة التلاميذ وتشجيعهم على التفوق</div>
+  <h2>🎓 خدماتنا التعليمية</h2>
+
+  <div class="card">
+    <h3>📖 دروس الدعم</h3>
+    <p>مساعدة التلاميذ على فهم الدروس وتحسين مستواهم.</p>
+  </div>
+
+  <div class="card">
+    <h3>✏️ التمارين والتطبيقات</h3>
+    <p>تمارين متنوعة لترسيخ المعلومات.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌟 المرافقة المدرسية</h3>
+    <p>متابعة التلميذ وتشجيعه على النجاح.</p>
+  </div>
+</section>
+
+<section id="lessons">
+  <h2>📚 فضاء الدروس</h2>
+
+  <div class="card">
+    <h3>السنة الأولى ابتدائي</h3>
+    <p>دروس وتمارين في القراءة والكتابة والرياضيات.</p>
+  </div>
+
+  <div class="card">
+    <h3>السنة الخامسة ابتدائي</h3>
+    <p>دروس وتمارين للمراجعة والتحضير للاختبارات.</p>
+  </div>
+
+  <div class="card">
+    <h3>فضاء النجاح</h3>
+    <p>نتعلم اليوم لنصنع نجاح الغد.</p>
+  </div>
 </section>
 
 <section id="contact">
-<h2>تواصلوا معنا</h2>
-<p>يسعدنا استقبال استفساراتكم والتواصل معكم عبر إدارة المدرسة.</p>
-</section><section id="lessons"><h2>📚 دروس السنة الأولى ابتدائي</h2><div class="card"><h3>📖 اللغة العربية</h3><h4>الدرس الأول: الحروف الهجائية</h4><p>أ - ب - ت - ث - ج - ح - خ</p><p>د - ذ - ر - ز - س - ش - ص</p><p>ض - ط - ظ - ع - غ - ف - ق</p><p>ك - ل - م - ن - هـ - و - ي</p><h4>أمثلة للقراءة</h4><p>أرنب - بيت - تفاح - جمل - سمك</p><h4>تدريب</h4><p>اكتب الحروف التالية: أ ........ ب ........ ت ........</p></div></section>
-</main>
+  <div class="card">
+    <h2>📞 اتصل بنا</h2>
+    <p>مرحباً بكم في مدرسة سراج التعليمية.</p>
+    <p>نسعد باستقبال استفساراتكم.</p>
+    <a href="#home" class="btn">العودة إلى الرئيسية</a>
+  </div>
+</section>
 
 <footer>
-<p>مدرسة سراج التعليمية © 2026</p>
-<p>مدرستنا طريقنا نحو النجاح</p>
+  <h3>مدرسة سراج التعليمية 🌸</h3>
+  <p>مدرستنا طريقنا نحو النجاح</p>
+  <p>جميع الحقوق محفوظة © 2026</p>
 </footer>
 
 </body>
