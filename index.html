@@ -1,3 +1,4 @@
+HTML
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -5,97 +6,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مدرسة سراج التعليمية</title>
-
+<meta name="description" content="مدرسة سراج التعليمية، فضاء للتعلم والنجاح والتميز.">
 <style>
+:root {
+  --blue:#1769aa;
+  --dark:#12385b;
+  --light:#eaf5ff;
+  --gold:#ffc857;
+  --white:#ffffff;
+}
 * {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
-
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f8ff;
-  color: #24344d;
-  text-align: center;
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f5f9ff;
+  color:#24364b;
+  line-height:1.8;
 }
-
 header {
-  background: linear-gradient(135deg, #1769aa, #55b8e8);
-  color: white;
-  padding: 30px 15px;
+  background:linear-gradient(135deg,#124b7a,#238bd0);
+  color:white;
+  text-align:center;
+  padding:35px 15px;
 }
-
+.logo {
+  font-size:48px;
+  margin-bottom:5px;
+}
 header h1 {
-  font-size: 30px;
-  margin: 10px;
+  margin:0;
+  font-size:30px;
 }
-
 header p {
-  font-size: 18px;
+  margin:8px 0;
+  color:#fff2c7;
+  font-size:18px;
 }
-
 nav {
-  background: white;
-  padding: 15px 5px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px #ccc;
+  background:#103b60;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:5px;
+  padding:10px;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-
 nav a {
-  display: inline-block;
-  color: #1769aa;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 7px;
+  color:white;
+  text-decoration:none;
+  padding:9px 15px;
+  border-radius:8px;
+  transition:.3s;
 }
-
 nav a:hover {
-  color: #e65b9b;
+  background:#238bd0;
 }
-
-section {
-  padding: 45px 18px;
-  margin: 15px auto;
-  max-width: 900px;
+.hero {
+  text-align:center;
+  padding:65px 15px;
+  background:linear-gradient(135deg,#d9efff,#ffffff);
 }
-
-h2 {
-  color: #1769aa;
+.hero h2 {
+  color:#14588d;
+  font-size:30px;
 }
-
-.card {
-  background: white;
-  padding: 25px;
-  margin: 15px auto;
-  border-radius: 18px;
-  box-shadow: 0 3px 12px #d6e3f0;
+.hero p {
+  font-size:18px;
 }
-
 .btn {
-  display: inline-block;
-  background: #1769aa;
-  color: white;
-  padding: 13px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  margin: 10px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+  display:inline-block;
+  background:#1769aa;
+  color:white;
+  padding:11px 23px;
+  margin:8px;
+  border:0;
+  border-radius:25px;
+  text-decoration:none;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
 }
-
 .btn:hover {
-  background: #e65b9b;
+  background:#103b60;
+  transform:translateY(-2px);
 }
-
+section {
+  padding:40px 18px;
+  max-width:1100px;
+  margin:auto;
+}
+.section-title {
+  text-align:center;
+  color:#1769aa;
+  font-size:27px;
+  margin-bottom:25px;
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.card {
+  background:white;
+  border-radius:16px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 4px 15px #174b7a18;
+  border:1px solid #e0edfa;
+  transition:.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 8px 22px #174b7a25;
+}
+.card .emoji {
+  font-size:42px;
+}
+.card h3 {
+  color:#1769aa;
+  margin:8px 0;
+}
+.card p {
+  color:#52677d;
+}
+.about {
+  background:#eaf5ff;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+.grade {
+  border-top:5px solid #238bd0;
+}
+.lesson-list {
+  text-align:right;
+  padding-right:20px;
+}
+.lesson-list li {
+  margin:9px 0;
+}
+.lesson-list a {
+  color:#1769aa;
+  text-decoration:none;
+  font-weight:bold;
+}
+.lesson-list a:hover {
+  text-decoration:underline;
+}
+.lesson-box {
+  background:#fff;
+  padding:20px;
+  margin:15px 0;
+  border-radius:14px;
+  border-right:5px solid #ffc857;
+}
+.lesson-content {
+  display:none;
+  background:#f0f7ff;
+  padding:15px;
+  border-radius:10px;
+  margin-top:12px;
+  text-align:right;
+}
+.lesson-content.open {
+  display:block;
+}
 footer {
-  background: #1769aa;
-  color: white;
-  padding: 25px;
-  margin-top: 30px;
+  background:#103b60;
+  color:white;
+  text-align:center;
+  padding:25px 10px;
+  margin-top:35px;
+}
+footer p {
+  margin:5px;
+}
+.back-top {
+  position:fixed;
+  bottom:18px;
+  left:18px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#1769aa;
+  color:white;
+  border:0;
+  font-size:22px;
+  cursor:pointer;
+  display:none;
+}
+@media(max-width:600px) {
+  header h1 {font-size:24px;}
+  .hero h2 {font-size:24px;}
+  nav a {padding:7px 9px;font-size:14px;}
+  section {padding:28px 13px;}
 }
 </style>
 </head>
@@ -103,9 +212,10 @@ footer {
 <body>
 
 <header id="home">
-  <h1>🌟 مدرسة سراج التعليمية 🌟</h1>
+  <div class="logo">📚</div>
+  <h1>مدرسة سراج التعليمية</h1>
   <p>مدرستنا طريقنا نحو النجاح</p>
-  <a href="#services" class="btn">اكتشف خدماتنا</a>
+  <p>معاً نتعلم، نبدع، ونتميز ⭐</p>
 </header>
 
 <nav>
@@ -113,97 +223,226 @@ footer {
   <a href="#about">من نحن</a>
   <a href="#services">خدماتنا</a>
   <a href="#lessons">الدروس</a>
+  <a href="#exercises">التمارين</a>
   <a href="#contact">اتصل بنا</a>
 </nav>
 
+<div class="hero">
+  <h2>مرحباً بكم في مدرسة سراج التعليمية 🌟</h2>
+  <p>فضاؤنا التعليمي يساعد أبناءنا على التعلم والتفوق والنجاح.</p>
+  <a class="btn" href="#lessons">اكتشف الدروس</a>
+  <a class="btn" href="#services">خدماتنا التعليمية</a>
+</div>
+
 <section id="about">
-  <div class="card">
-    <h2>📚 من نحن؟</h2>
+  <h2 class="section-title">من نحن؟</h2>
+  <div class="about">
     <p>
-      مرحباً بكم في مدرسة سراج التعليمية.
-      فضاء للتعلم والإبداع والتميز،
-      نرافق أبناءنا في طريق النجاح والتفوق.
+      مدرسة سراج التعليمية فضاء تربوي يهدف إلى مساعدة التلاميذ
+      على الفهم والمراجعة وتطوير قدراتهم العلمية.
     </p>
+    <p>
+      نؤمن بأن كل طفل قادر على النجاح عندما يجد التوجيه
+      والتشجيع والطريقة المناسبة للتعلم.
+    </p>
+    <h3>🌷 العلم نور والمثابرة طريق النجاح</h3>
   </div>
 </section>
 
 <section id="services">
-  <h2>🎓 خدماتنا التعليمية</h2>
+  <h2 class="section-title">خدماتنا التعليمية</h2>
+  <div class="cards">
 
-  <div class="card">
-    <h3>📖 دروس الدعم</h3>
-    <p>مساعدة التلاميذ على فهم الدروس وتحسين مستواهم.</p>
-  </div>
+    <div class="card">
+      <div class="emoji">📖</div>
+      <h3>دروس الدعم والمراجعة</h3>
+      <p>دروس مبسطة تساعد التلميذ على فهم المواد الدراسية.</p>
+      <a class="btn" href="#lessons">اكتشف الدروس</a>
+    </div>
 
-  <div class="card">
-    <h3>✏️ التمارين والتطبيقات</h3>
-    <p>تمارين متنوعة لترسيخ المعلومات.</p>
-  </div>
-<div class="card" onclick="document.getElementById('primaire1').scrollIntoView({behavior:'smooth'})" style="cursor:pointer">
-    <h3>🌟 المرافقة المدرسية</h3>
-    <p>متابعة التلميذ وتشجيعه على النجاح.</p>
+    <div class="card">
+      <div class="emoji">✏️</div>
+      <h3>التمارين والتطبيقات</h3>
+      <p>تطبيقات متنوعة لترسيخ المعلومات وتنمية المهارات.</p>
+      <a class="btn" href="#exercises">ابدأ التمارين</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🏆</div>
+      <h3>متابعة التلاميذ</h3>
+      <p>تشجيع التلميذ على الاجتهاد ومتابعة تقدمه الدراسي.</p>
+      <a class="btn" href="#follow">اكتشف المزيد</a>
+    </div>
+
   </div>
 </section>
 
 <section id="lessons">
-  <h2>📚 فضاء الدروس</h2>
+  <h2 class="section-title">فضاء الدروس 📚</h2>
+  <div class="cards">
 
-  <div class="card">
-    <h3>السنة الأولى ابتدائي</h3>
-    <p>دروس وتمارين في القراءة والكتابة والرياضيات.</p>
+    <div class="card grade">
+      <div class="emoji">👧</div>
+      <h3>السنة الأولى ابتدائي</h3>
+      <p>دروس وتمارين مناسبة للمستوى الأول.</p>
+      <a class="btn" href="#primaire1">الدخول للقسم</a>
+    </div>
+
+    <div class="card grade">
+      <div class="emoji">👩‍🎓</div>
+      <h3>السنة الخامسة ابتدائي</h3>
+      <p>دروس ومراجعة وتحضير للامتحانات.</p>
+      <a class="btn" href="#primaire5">الدخول للقسم</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="primaire1">
+  <h2 class="section-title">🌸 السنة الأولى ابتدائي</h2>
+
+  <div class="lesson-box">
+    <h3>📘 اللغة العربية</h3>
+    <ul class="lesson-list">
+      <li>الحروف الهجائية</li>
+      <li>قراءة الكلمات والجمل</li>
+      <li>تقطيع الكلمات</li>
+      <li>الكتابة والإملاء</li>
+    </ul>
+    <button class="btn" onclick="toggleLesson('arabic1')">عرض الدرس</button>
+    <div class="lesson-content" id="arabic1">
+      <h4>تدريب على القراءة</h4>
+      <p>أَرِيجُ تِلْمِيذَةٌ مُجْتَهِدَةٌ.</p>
+      <p>قَرَأَ سَامِي كِتَاباً.</p>
+      <p>تدرب على قراءة الكلمات بصوت واضح.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>السنة الخامسة ابتدائي</h3>
-    <p>دروس وتمارين للمراجعة والتحضير للاختبارات.</p>
+  <div class="lesson-box">
+    <h3>🔢 الرياضيات</h3>
+    <ul class="lesson-list">
+      <li>الأعداد والحساب</li>
+      <li>الجمع والطرح</li>
+      <li>المقارنة بين الأعداد</li>
+      <li>الأشكال الهندسية</li>
+    </ul>
+    <button class="btn" onclick="toggleLesson('math1')">عرض الدرس</button>
+    <div class="lesson-content" id="math1">
+      <h4>تدريب في الجمع</h4>
+      <p>2 + 3 = ؟</p>
+      <p>4 + 1 = ؟</p>
+      <p>5 + 2 = ؟</p>
+    </div>
+  </div>
+</section>
+
+<section id="primaire5">
+  <h2 class="section-title">🌟 السنة الخامسة ابتدائي</h2>
+
+  <div class="lesson-box">
+    <h3>📗 اللغة العربية</h3>
+    <ul class="lesson-list">
+      <li>القواعد النحوية</li>
+      <li>الصرف والتحويل</li>
+      <li>فهم النصوص</li>
+      <li>التعبير الكتابي</li>
+    </ul>
+    <button class="btn" onclick="toggleLesson('arabic5')">عرض الدرس</button>
+    <div class="lesson-content" id="arabic5">
+      <h4>تدريب لغوي</h4>
+      <p>استخرج الفعل والفاعل من الجملة:</p>
+      <p>كتب التلميذ الدرس.</p>
+      <p>اكتب جملة مفيدة من إنشائك.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>فضاء النجاح</h3>
-    <p>نتعلم اليوم لنصنع نجاح الغد.</p>
+  <div class="lesson-box">
+    <h3>➗ الرياضيات</h3>
+    <ul class="lesson-list">
+      <li>الأعداد والعمليات</li>
+      <li>الضرب والقسمة</li>
+      <li>الكسور والأعداد العشرية</li>
+      <li>المسائل والوضعيات الإدماجية</li>
+    </ul>
+    <button class="btn" onclick="toggleLesson('math5')">عرض الدرس</button>
+    <div class="lesson-content" id="math5">
+      <h4>تدريب في الضرب</h4>
+      <p>25 × 4 = ؟</p>
+      <p>36 × 5 = ؟</p>
+      <p>125 × 3 = ؟</p>
+    </div>
+  </div>
+
+  <div class="lesson-box">
+    <h3>🌍 التربية العلمية</h3>
+    <p>دروس في جسم الإنسان، الطبيعة والبيئة.</p>
+    <button class="btn" onclick="toggleLesson('science5')">عرض الدرس</button>
+    <div class="lesson-content" id="science5">
+      <h4>المحافظة على البيئة</h4>
+      <p>نحافظ على البيئة بعدم رمي النفايات، وغرس الأشجار، وترشيد استهلاك الماء.</p>
+    </div>
+  </div>
+
+</section>
+
+<section id="exercises">
+  <h2 class="section-title">✏️ فضاء التمارين</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">📝</div>
+      <h3>تمارين السنة الأولى</h3>
+      <p>تمارين القراءة والحساب والكتابة.</p>
+      <a class="btn" href="#primaire1">ابدأ</a>
+    </div>
+    <div class="card">
+      <div class="emoji">📐</div>
+      <h3>تمارين السنة الخامسة</h3>
+      <p>تطبيقات في الرياضيات واللغة العربية.</p>
+      <a class="btn" href="#primaire5">ابدأ</a>
+    </div>
+  </div>
+</section>
+
+<section id="follow">
+  <h2 class="section-title">🏆 متابعة التلاميذ</h2>
+  <div class="about">
+    <p>النجاح يحتاج إلى الاجتهاد والمراجعة اليومية.</p>
+    <p>نساعد أبناءنا على تنظيم وقتهم وتشجيعهم على التعلم.</p>
+    <h3>كل يوم خطوة نحو التفوق ⭐</h3>
   </div>
 </section>
 
 <section id="contact">
-  <div class="card">
-    <h2>📞 اتصل بنا</h2>
+  <h2 class="section-title">📩 اتصل بنا</h2>
+  <div class="about">
     <p>مرحباً بكم في مدرسة سراج التعليمية.</p>
-    <p>نسعد باستقبال استفساراتكم.</p>
-    <a href="#home" class="btn">العودة إلى الرئيسية</a>
+    <p>نسعد باهتمامكم بالتعلم والنجاح.</p>
+    <p>يمكنكم زيارة موقعنا ومتابعة الدروس والتمارين.</p>
+    <a class="btn" href="#home">العودة إلى الرئيسية</a>
   </div>
 </section>
 
 <footer>
-  <h3>مدرسة سراج التعليمية 🌸</h3>
+  <h3>📚 مدرسة سراج التعليمية</h3>
   <p>مدرستنا طريقنا نحو النجاح</p>
   <p>جميع الحقوق محفوظة © 2026</p>
 </footer>
 
-<section id="primaire1">
-  <h2>🌸 فضاء السنة الأولى ابتدائي</h2>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى">↑</button>
 
-  <div class="card">
-    <h3>📖 اللغة العربية</h3>
-    <p>الحروف، القراءة، الكتابة وتقطيع الكلمات.</p>
-  </div>
+<script>
+function toggleLesson(id) {
+  const lesson = document.getElementById(id);
+  if (!lesson) return;
+  lesson.classList.toggle('open');
+}
 
-  <div class="card">
-    <h3>🔢 الرياضيات</h3>
-    <p>الأعداد، الجمع والطرح والأشكال الهندسية.</p>
-  </div>
+const backTop = document.getElementById('backTop');
 
-  <div class="card">
-    <h3>🕌 التربية الإسلامية</h3>
-    <p>دروس مبسطة وأناشيد وتمارين.</p>
-  </div>
-
-  <div class="card">
-    <h3>✏️ تمارين وتطبيقات</h3>
-    <p>اختبارات قصيرة مع التصحيح.</p>
-  </div>
-
-  <a href="#lessons" class="btn">العودة إلى فضاء الدروس</a>
-</section>
+window.addEventListener('scroll', function() {
+  backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+</script>
 
 </body>
 </html>
