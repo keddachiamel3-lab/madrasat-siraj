@@ -676,5 +676,241 @@ function correctExam(){
 renderLessons();
 
 </script>
+HTML
+
+<!-- مكتبة اختبارات مدرسة سراج -->
+<style>
+.exam-library{
+ background:#edf5ff;
+ padding:22px;
+ border-radius:18px;
+ margin:25px auto;
+}
+.exam-card{
+ background:white;
+ padding:18px;
+ border-radius:14px;
+ margin:15px 0;
+ box-shadow:0 3px 12px #123e6715;
+}
+.exam-card h3{color:#1769aa}
+.exam-paper{
+ background:white;
+ padding:20px;
+ border-radius:12px;
+ margin-top:15px;
+}
+.exam-question{
+ border-bottom:1px solid #ddd;
+ padding:12px 0;
+}
+.exam-question label{
+ display:block;
+ padding:5px;
+ cursor:pointer;
+}
+.exam-btn{
+ background:#1769aa;
+ color:white;
+ border:0;
+ padding:11px 20px;
+ border-radius:20px;
+ margin:5px;
+ cursor:pointer;
+ font-size:15px;
+}
+.exam-answer{
+ display:none;
+ background:#eaf8ef;
+ padding:15px;
+ border-radius:10px;
+ margin-top:12px;
+}
+.exam-answer.show{display:block}
+.exam-result{font-weight:bold;color:#1769aa}
+@media print{
+ nav,header,.hero,footer,.no-print,.exam-library button{
+ display:none!important;
+ }
+ .exam-paper{display:block!important}
+ .exam-answer{display:block!important}
+}
+</style>
+
+<section id="arabic-exams">
+ <h2 class="section-title">🏆 بنك اختبارات اللغة العربية</h2>
+ <div class="exam-library">
+  <div class="about">
+   <h3>السنة الخامسة ابتدائي</h3>
+   <p>اختبارات تدريبية وفق مهارات المنهاج الجزائري</p>
+   <p>كل نموذج على 20 نقطة</p>
+  </div>
+
+  <div id="examModels"></div>
+ </div>
+</section>
+
+<script>
+(function(){
+
+const models=[
+
+{
+title:"النموذج الأول: حب الوطن",
+term:"الفصل الأول",
+text:"الوطن أغلى ما يملكه الإنسان، فهو الأرض التي ولد عليها وترعرع بين أحضانها. يحب المواطن وطنه ويحافظ على نظافته، ويساهم في بنائه بالعلم والعمل. إن التلميذ المجتهد يخدم وطنه عندما يتعلم ويصبح فرداً نافعاً في المجتمع.",
+questions:[
+{q:"ما موضوع النص؟",a:["حب الوطن","الرياضة","السفر"],c:0},
+{q:"كيف يخدم التلميذ وطنه؟",a:["بالكسل","بالعلم والعمل","بإهمال الدراسة"],c:1},
+{q:"مرادف كلمة ترعرع:",a:["نشأ","رحل","نام"],c:0},
+{q:"ضد كلمة النظافة:",a:["الجمال","الترتيب","الوسخ"],c:2},
+{q:"كلمة المواطن تدل على:",a:["اسم","فعل","حرف"],c:0}
+],
+writing:"اكتب فقرة من 6 إلى 8 أسطر تتحدث فيها عن حبك لوطنك وواجبك نحوه.",
+correction:"الوطن هو البلد الذي ننتمي إليه ونحبه. نحافظ على نظافته، ونحترم قوانينه، ونجتهد في دراستنا حتى نساهم في تقدمه وازدهاره."
+},
+
+{
+title:"النموذج الثاني: العلم طريق النجاح",
+term:"الفصل الأول",
+text:"العلم سلاح الأمم وسبب تقدمها، فبالعلم يكتشف الإنسان أسرار الطبيعة ويطور حياته. يحرص التلميذ المجتهد على مراجعة دروسه واحترام معلميه وتنظيم وقته. وقد أصبح العلم في عصرنا ضرورة لبناء مستقبل أفضل.",
+questions:[
+{q:"ما الفكرة العامة للنص؟",a:["أهمية العلم","أهمية اللعب","رحلة مدرسية"],c:0},
+{q:"بماذا يحرص التلميذ المجتهد؟",a:["إهمال دروسه","مراجعة دروسه","التغيب"],c:1},
+{q:"مرادف كلمة يحرص:",a:["يهمل","يعتني","ينسى"],c:1},
+{q:"استخرج من النص فعلاً مضارعاً:",a:["أصبح","اكتشف","يحرص"],c:2},
+{q:"العلم سلاح الأمم جملة:",a:["اسمية","فعلية","استفهامية"],c:0}
+],
+writing:"اكتب فقرة عن أهمية العلم ودور التلميذ في تحقيق النجاح.",
+correction:"العلم نور يضيء طريق الإنسان، ويساعده على تحقيق أحلامه. لذلك يجب على التلميذ الاجتهاد ومراجعة دروسه واحترام معلميه، حتى ينجح ويساهم في تقدم وطنه."
+},
+
+{
+title:"النموذج الثالث: المحافظة على البيئة",
+term:"تقويم شامل",
+text:"البيئة نعمة عظيمة يجب علينا المحافظة عليها، فهي تضم الأشجار والأنهار والهواء والحيوانات. يقوم الإنسان الواعي بغرس الأشجار وعدم رمي النفايات في الشوارع. كما يقتصد في استعمال الماء ويحافظ على نظافة محيطه. إن حماية البيئة مسؤولية الجميع.",
+questions:[
+{q:"ما موضوع النص؟",a:["البيئة","المدرسة","التجارة"],c:0},
+{q:"ما واجب الإنسان تجاه البيئة؟",a:["تلويثها","حمايتها","إتلاف الأشجار"],c:1},
+{q:"جمع كلمة شجرة:",a:["شجرتان","أشجار","شجير"],c:1},
+{q:"استخرج من النص فعلاً ماضياً:",a:["يقوم","يحافظ","لا يوجد فعل ماض ظاهر في الخيارات"],c:2},
+{q:"كلمة مسؤولية هي:",a:["اسم","فعل","حرف"],c:0}
+],
+writing:"اكتب فقرة من 6 إلى 8 أسطر تنصح فيها زملاءك بالمحافظة على البيئة.",
+correction:"البيئة بيتنا الكبير، لذلك يجب علينا حمايتها من التلوث. نغرس الأشجار، ولا نرمي النفايات في الشوارع، ونحافظ على الماء والهواء النقي. فالمحافظة على البيئة واجب الجميع."
+}
+
+];
+
+const root=document.getElementById("examModels");
+
+models.forEach((model,index)=>{
+ const card=document.createElement("div");
+ card.className="exam-card";
+ card.innerHTML=`
+ <h3>📘 ${model.title}</h3>
+ <p>${model.term} – اللغة العربية</p>
+ <p><b>النص:</b></p>
+ <p style="background:#f5f8fc;padding:14px;border-radius:10px">
+ ${model.text}
+ </p>
+ <button class="exam-btn no-print" onclick="openSirajExam(${index})">
+ ابدأ الاختبار
+ </button>
+ <div id="siraj-paper-${index}" class="exam-paper" style="display:none">
+ <h3>مدرسة سراج التعليمية</h3>
+ <h4>${model.title}</h4>
+ <p>الاسم واللقب: ........................ القسم: ............</p>
+ <p><b>أولاً: فهم النص</b> – 10 نقاط</p>
+ <div id="siraj-questions-${index}"></div>
+ <p><b>ثانياً: الوضعية الإدماجية</b> – 10 نقاط</p>
+ <p>${model.writing}</p>
+ <textarea rows="6" style="width:100%;font-family:inherit" placeholder="اكتب إجابتك هنا..."></textarea>
+ <div class="no-print">
+ <button class="exam-btn" onclick="correctSirajExam(${index})">صحح الإجابات</button>
+ <button class="exam-btn" onclick="printSirajExam(${index})">طباعة الاختبار</button>
+ <button class="exam-btn" onclick="showSirajAnswer(${index})">التصحيح النموذجي</button>
+ </div>
+ <div id="siraj-result-${index}" class="exam-result"></div>
+ <div id="siraj-answer-${index}" class="exam-answer">
+ <h3>التصحيح النموذجي</h3>
+ <p><b>أجوبة أسئلة الفهم:</b></p>
+ <div id="siraj-key-${index}"></div>
+ <p><b>نموذج الوضعية الإدماجية:</b></p>
+ <p>${model.correction}</p>
+ <p><b>سلم التنقيط المقترح:</b></p>
+ <ul>
+ <li>فهم النص: 10 نقاط.</li>
+ <li>الوضعية الإدماجية: 10 نقاط.</li>
+ <li>سلامة اللغة وتنظيم الأفكار والإملاء تؤخذ في الحسبان عند تقييم التعبير.</li>
+ </ul>
+ </div>
+ </div>`;
+ root.appendChild(card);
+
+ const qbox=card.querySelector("#siraj-questions-"+index);
+
+ model.questions.forEach((q,j)=>{
+  let html=`<div class="exam-question">
+  <b>${j+1}. ${q.q}</b>`;
+  q.a.forEach((a,k)=>{
+   html+=`<label><input type="radio" name="siraj-${index}-${j}" value="${k}"> ${a}</label>`;
+  });
+  html+="</div>";
+  qbox.innerHTML+=html;
+ });
+
+ const key=card.querySelector("#siraj-key-"+index);
+ model.questions.forEach((q,j)=>{
+  key.innerHTML+=`<p>${j+1}. ${q.a[q.c]}</p>`;
+ });
+});
+
+window.openSirajExam=function(index){
+ const paper=document.getElementById("siraj-paper-"+index);
+ paper.style.display="block";
+ paper.scrollIntoView({behavior:"smooth"});
+};
+
+window.correctSirajExam=function(index){
+ const model=models[index];
+ let score=0,answered=0;
+
+ model.questions.forEach((q,j)=>{
+  const selected=document.querySelector(
+   'input[name="siraj-'+index+'-'+j+'"]:checked'
+  );
+  if(selected){
+   answered++;
+   if(Number(selected.value)===q.c) score++;
+  }
+ });
+
+ const result=document.getElementById("siraj-result-"+index);
+
+ if(answered!==model.questions.length){
+  result.textContent="أجب عن جميع الأسئلة أولاً.";
+  return;
+ }
+
+ result.textContent="نتيجتك في أسئلة الفهم: "+(score*2)+
+ " من 10 نقاط. الوضعية الإدماجية تُقيّم وفق سلم التنقيط.";
+};
+
+window.showSirajAnswer=function(index){
+ document.getElementById("siraj-answer-"+index).classList.toggle("show");
+};
+
+window.printSirajExam=function(index){
+ const paper=document.getElementById("siraj-paper-"+index);
+ const answer=document.getElementById("siraj-answer-"+index);
+ answer.classList.remove("show");
+ window.print();
+};
+
+})();
+</script>
+<!-- نهاية مكتبة الاختبارات -->
+
 </body>
 </html>
