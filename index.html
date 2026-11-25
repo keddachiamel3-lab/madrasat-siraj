@@ -6,205 +6,162 @@ HTML
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مدرسة سراج التعليمية</title>
-<meta name="description" content="مدرسة سراج التعليمية، فضاء للتعلم والنجاح والتميز.">
+
 <style>
-:root {
-  --blue:#1769aa;
-  --dark:#12385b;
-  --light:#eaf5ff;
-  --gold:#ffc857;
-  --white:#ffffff;
+:root{
+ --blue:#1769aa;
+ --dark:#103b60;
+ --light:#eaf5ff;
+ --gold:#ffc857;
+ --green:#25865a;
 }
-* {
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f4f8fd;
+ color:#26384b;
+ line-height:1.9;
 }
-body {
-  margin:0;
-  font-family:Tahoma,Arial,sans-serif;
-  background:#f5f9ff;
-  color:#24364b;
-  line-height:1.8;
+header{
+ background:linear-gradient(135deg,#103b60,#258bd0);
+ color:white;
+ text-align:center;
+ padding:30px 15px;
 }
-header {
-  background:linear-gradient(135deg,#124b7a,#238bd0);
-  color:white;
-  text-align:center;
-  padding:35px 15px;
+header .logo{font-size:48px}
+header h1{margin:0;font-size:29px}
+header p{color:#ffe5a6;margin:5px}
+nav{
+ background:#103b60;
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ position:sticky;
+ top:0;
+ z-index:10;
 }
-.logo {
-  font-size:48px;
-  margin-bottom:5px;
+nav a{
+ color:white;
+ text-decoration:none;
+ padding:10px 13px;
 }
-header h1 {
-  margin:0;
-  font-size:30px;
+nav a:hover{background:#258bd0}
+.hero{
+ text-align:center;
+ padding:40px 15px;
+ background:#e3f2ff;
 }
-header p {
-  margin:8px 0;
-  color:#fff2c7;
-  font-size:18px;
+.hero h2{color:#14588d}
+section{
+ max-width:1100px;
+ margin:auto;
+ padding:30px 15px;
 }
-nav {
-  background:#103b60;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:5px;
-  padding:10px;
-  position:sticky;
-  top:0;
-  z-index:100;
+.section-title{
+ text-align:center;
+ color:#1769aa;
+ font-size:25px;
 }
-nav a {
-  color:white;
-  text-decoration:none;
-  padding:9px 15px;
-  border-radius:8px;
-  transition:.3s;
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:15px;
 }
-nav a:hover {
-  background:#238bd0;
+.card,.lesson{
+ background:white;
+ border-radius:15px;
+ padding:19px;
+ box-shadow:0 3px 14px #123e6715;
+ border:1px solid #e3edf8;
 }
-.hero {
-  text-align:center;
-  padding:65px 15px;
-  background:linear-gradient(135deg,#d9efff,#ffffff);
+.card{text-align:center}
+.card h3,.lesson h3{color:#1769aa}
+.emoji{font-size:40px}
+.btn{
+ background:#1769aa;
+ color:white;
+ border:0;
+ border-radius:22px;
+ padding:10px 19px;
+ margin:5px;
+ cursor:pointer;
+ font-size:15px;
 }
-.hero h2 {
-  color:#14588d;
-  font-size:30px;
+.btn:hover{background:#103b60}
+.btn.gold{background:#e9aa37;color:#26384b}
+.btn.green{background:#25865a}
+.about{
+ background:#eaf5ff;
+ padding:20px;
+ border-radius:15px;
+ text-align:center;
 }
-.hero p {
-  font-size:18px;
+.lesson{margin-bottom:15px}
+.lesson-content{
+ display:none;
+ margin-top:15px;
+ padding:17px;
+ background:#f0f7ff;
+ border-radius:12px;
 }
-.btn {
-  display:inline-block;
-  background:#1769aa;
-  color:white;
-  padding:11px 23px;
-  margin:8px;
-  border:0;
-  border-radius:25px;
-  text-decoration:none;
-  font-size:16px;
-  cursor:pointer;
-  transition:.3s;
+.lesson-content.open{display:block}
+.example{
+ background:white;
+ border-right:4px solid #ffc857;
+ padding:12px;
+ margin:10px 0;
+ border-radius:8px;
 }
-.btn:hover {
-  background:#103b60;
-  transform:translateY(-2px);
+.exercise{
+ background:#fff8e9;
+ padding:15px;
+ margin:12px 0;
+ border-radius:12px;
 }
-section {
-  padding:40px 18px;
-  max-width:1100px;
-  margin:auto;
+.question{
+ background:white;
+ border-radius:10px;
+ padding:12px;
+ margin:12px 0;
 }
-.section-title {
-  text-align:center;
-  color:#1769aa;
-  font-size:27px;
-  margin-bottom:25px;
+.question label{
+ display:block;
+ padding:5px;
+ cursor:pointer;
 }
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
+.question label:hover{background:#f0f7ff}
+.result{
+ font-weight:bold;
+ margin-top:8px;
 }
-.card {
-  background:white;
-  border-radius:16px;
-  padding:22px;
-  text-align:center;
-  box-shadow:0 4px 15px #174b7a18;
-  border:1px solid #e0edfa;
-  transition:.3s;
+input[type=radio]{margin-left:7px}
+input[type=text],textarea{
+ width:100%;
+ padding:12px;
+ border:1px solid #b8cde0;
+ border-radius:9px;
+ font-family:inherit;
+ font-size:16px;
+ margin:7px 0;
 }
-.card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 8px 22px #174b7a25;
+footer{
+ background:#103b60;
+ color:white;
+ text-align:center;
+ padding:22px;
 }
-.card .emoji {
-  font-size:42px;
+.hidden{display:none}
+@media(max-width:600px){
+ header h1{font-size:23px}
+ nav a{font-size:13px;padding:8px}
+ section{padding:22px 12px}
 }
-.card h3 {
-  color:#1769aa;
-  margin:8px 0;
-}
-.card p {
-  color:#52677d;
-}
-.about {
-  background:#eaf5ff;
-  border-radius:18px;
-  padding:25px;
-  text-align:center;
-}
-.grade {
-  border-top:5px solid #238bd0;
-}
-.lesson-list {
-  text-align:right;
-  padding-right:20px;
-}
-.lesson-list li {
-  margin:9px 0;
-}
-.lesson-list a {
-  color:#1769aa;
-  text-decoration:none;
-  font-weight:bold;
-}
-.lesson-list a:hover {
-  text-decoration:underline;
-}
-.lesson-box {
-  background:#fff;
-  padding:20px;
-  margin:15px 0;
-  border-radius:14px;
-  border-right:5px solid #ffc857;
-}
-.lesson-content {
-  display:none;
-  background:#f0f7ff;
-  padding:15px;
-  border-radius:10px;
-  margin-top:12px;
-  text-align:right;
-}
-.lesson-content.open {
-  display:block;
-}
-footer {
-  background:#103b60;
-  color:white;
-  text-align:center;
-  padding:25px 10px;
-  margin-top:35px;
-}
-footer p {
-  margin:5px;
-}
-.back-top {
-  position:fixed;
-  bottom:18px;
-  left:18px;
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:#1769aa;
-  color:white;
-  border:0;
-  font-size:22px;
-  cursor:pointer;
-  display:none;
-}
-@media(max-width:600px) {
-  header h1 {font-size:24px;}
-  .hero h2 {font-size:24px;}
-  nav a {padding:7px 9px;font-size:14px;}
-  section {padding:28px 13px;}
+@media print{
+ nav,header,.hero,footer,.btn,.no-print{display:none!important}
+ body{background:white}
+ .lesson-content{display:block!important}
+ .lesson,.card{box-shadow:none;break-inside:avoid}
 }
 </style>
 </head>
@@ -212,237 +169,512 @@ footer p {
 <body>
 
 <header id="home">
-  <div class="logo">📚</div>
-  <h1>مدرسة سراج التعليمية</h1>
-  <p>مدرستنا طريقنا نحو النجاح</p>
-  <p>معاً نتعلم، نبدع، ونتميز ⭐</p>
+ <div class="logo">📚</div>
+ <h1>مدرسة سراج التعليمية</h1>
+ <p>مدرستنا طريقنا نحو النجاح</p>
+ <p>نتعلم – نبدع – نتميز ⭐</p>
 </header>
 
 <nav>
-  <a href="#home">الرئيسية</a>
-  <a href="#about">من نحن</a>
-  <a href="#services">خدماتنا</a>
-  <a href="#lessons">الدروس</a>
-  <a href="#exercises">التمارين</a>
-  <a href="#contact">اتصل بنا</a>
+ <a href="#home">الرئيسية</a>
+ <a href="#about">من نحن</a>
+ <a href="#grades">الأقسام</a>
+ <a href="#library">مكتبة الدروس</a>
+ <a href="#exams">الاختبارات</a>
 </nav>
 
 <div class="hero">
-  <h2>مرحباً بكم في مدرسة سراج التعليمية 🌟</h2>
-  <p>فضاؤنا التعليمي يساعد أبناءنا على التعلم والتفوق والنجاح.</p>
-  <a class="btn" href="#lessons">اكتشف الدروس</a>
-  <a class="btn" href="#services">خدماتنا التعليمية</a>
+ <h2>مرحباً بكم في مدرسة سراج التعليمية 🌷</h2>
+ <p>فضاء للتعلم والمراجعة والتفوق الدراسي.</p>
+ <a class="btn" href="#library">ابدأ التعلم الآن</a>
 </div>
 
 <section id="about">
-  <h2 class="section-title">من نحن؟</h2>
-  <div class="about">
-    <p>
-      مدرسة سراج التعليمية فضاء تربوي يهدف إلى مساعدة التلاميذ
-      على الفهم والمراجعة وتطوير قدراتهم العلمية.
-    </p>
-    <p>
-      نؤمن بأن كل طفل قادر على النجاح عندما يجد التوجيه
-      والتشجيع والطريقة المناسبة للتعلم.
-    </p>
-    <h3>🌷 العلم نور والمثابرة طريق النجاح</h3>
-  </div>
+ <h2 class="section-title">من نحن؟</h2>
+ <div class="about">
+  <p>مدرسة سراج التعليمية فضاء تربوي يساعد أبناءنا على التعلم والفهم والنجاح.</p>
+  <h3>العلم نور والمثابرة طريق النجاح ⭐</h3>
+ </div>
 </section>
 
-<section id="services">
-  <h2 class="section-title">خدماتنا التعليمية</h2>
-  <div class="cards">
-
-    <div class="card">
-      <div class="emoji">📖</div>
-      <h3>دروس الدعم والمراجعة</h3>
-      <p>دروس مبسطة تساعد التلميذ على فهم المواد الدراسية.</p>
-      <a class="btn" href="#lessons">اكتشف الدروس</a>
-    </div>
-
-    <div class="card">
-      <div class="emoji">✏️</div>
-      <h3>التمارين والتطبيقات</h3>
-      <p>تطبيقات متنوعة لترسيخ المعلومات وتنمية المهارات.</p>
-      <a class="btn" href="#exercises">ابدأ التمارين</a>
-    </div>
-
-    <div class="card">
-      <div class="emoji">🏆</div>
-      <h3>متابعة التلاميذ</h3>
-      <p>تشجيع التلميذ على الاجتهاد ومتابعة تقدمه الدراسي.</p>
-      <a class="btn" href="#follow">اكتشف المزيد</a>
-    </div>
-
+<section id="grades">
+ <h2 class="section-title">الأقسام التعليمية</h2>
+ <div class="cards">
+  <div class="card">
+   <div class="emoji">👧</div>
+   <h3>السنة الأولى ابتدائي</h3>
+   <p>دروس وتمارين للمستوى الأول.</p>
+   <button class="btn" onclick="alert('قريباً سنضيف مكتبة السنة الأولى')">قريباً</button>
   </div>
+  <div class="card">
+   <div class="emoji">🎓</div>
+   <h3>السنة الخامسة ابتدائي</h3>
+   <p>دروس واختبارات ومراجعة.</p>
+   <a class="btn" href="#library">الدخول للقسم</a>
+  </div>
+ </div>
 </section>
 
-<section id="lessons">
-  <h2 class="section-title">فضاء الدروس 📚</h2>
-  <div class="cards">
+<section id="library">
+ <h2 class="section-title">📚 مكتبة اللغة العربية</h2>
+ <div class="about">
+  <h3>السنة الخامسة ابتدائي</h3>
+  <p>الفصل الأول – دروس وتمارين تطبيقية</p>
+  <p>اختاري الدرس لقراءته ثم أنجزي التمارين.</p>
+ </div>
 
-    <div class="card grade">
-      <div class="emoji">👧</div>
-      <h3>السنة الأولى ابتدائي</h3>
-      <p>دروس وتمارين مناسبة للمستوى الأول.</p>
-      <a class="btn" href="#primaire1">الدخول للقسم</a>
-    </div>
-
-    <div class="card grade">
-      <div class="emoji">👩‍🎓</div>
-      <h3>السنة الخامسة ابتدائي</h3>
-      <p>دروس ومراجعة وتحضير للامتحانات.</p>
-      <a class="btn" href="#primaire5">الدخول للقسم</a>
-    </div>
-
-  </div>
+ <div id="lessonList" style="margin-top:20px"></div>
 </section>
 
-<section id="primaire1">
-  <h2 class="section-title">🌸 السنة الأولى ابتدائي</h2>
-
-  <div class="lesson-box">
-    <h3>📘 اللغة العربية</h3>
-    <ul class="lesson-list">
-      <li>الحروف الهجائية</li>
-      <li>قراءة الكلمات والجمل</li>
-      <li>تقطيع الكلمات</li>
-      <li>الكتابة والإملاء</li>
-    </ul>
-    <button class="btn" onclick="toggleLesson('arabic1')">عرض الدرس</button>
-    <div class="lesson-content" id="arabic1">
-      <h4>تدريب على القراءة</h4>
-      <p>أَرِيجُ تِلْمِيذَةٌ مُجْتَهِدَةٌ.</p>
-      <p>قَرَأَ سَامِي كِتَاباً.</p>
-      <p>تدرب على قراءة الكلمات بصوت واضح.</p>
-    </div>
-  </div>
-
-  <div class="lesson-box">
-    <h3>🔢 الرياضيات</h3>
-    <ul class="lesson-list">
-      <li>الأعداد والحساب</li>
-      <li>الجمع والطرح</li>
-      <li>المقارنة بين الأعداد</li>
-      <li>الأشكال الهندسية</li>
-    </ul>
-    <button class="btn" onclick="toggleLesson('math1')">عرض الدرس</button>
-    <div class="lesson-content" id="math1">
-      <h4>تدريب في الجمع</h4>
-      <p>2 + 3 = ؟</p>
-      <p>4 + 1 = ؟</p>
-      <p>5 + 2 = ؟</p>
-    </div>
-  </div>
+<section id="exams">
+ <h2 class="section-title">📝 اختبارات اللغة العربية</h2>
+ <div class="about">
+  <p>بعد مراجعة الدروس يمكنك إنجاز الاختبار الشامل.</p>
+  <button class="btn" onclick="startExam()">ابدأ الاختبار</button>
+  <div id="examArea"></div>
+ </div>
 </section>
 
-<section id="primaire5">
-  <h2 class="section-title">🌟 السنة الخامسة ابتدائي</h2>
-
-  <div class="lesson-box">
-    <h3>📗 اللغة العربية</h3>
-    <ul class="lesson-list">
-      <li>القواعد النحوية</li>
-      <li>الصرف والتحويل</li>
-      <li>فهم النصوص</li>
-      <li>التعبير الكتابي</li>
-    </ul>
-    <button class="btn" onclick="toggleLesson('arabic5')">عرض الدرس</button>
-    <div class="lesson-content" id="arabic5">
-      <h4>تدريب لغوي</h4>
-      <p>استخرج الفعل والفاعل من الجملة:</p>
-      <p>كتب التلميذ الدرس.</p>
-      <p>اكتب جملة مفيدة من إنشائك.</p>
-    </div>
-  </div>
-
-  <div class="lesson-box">
-    <h3>➗ الرياضيات</h3>
-    <ul class="lesson-list">
-      <li>الأعداد والعمليات</li>
-      <li>الضرب والقسمة</li>
-      <li>الكسور والأعداد العشرية</li>
-      <li>المسائل والوضعيات الإدماجية</li>
-    </ul>
-    <button class="btn" onclick="toggleLesson('math5')">عرض الدرس</button>
-    <div class="lesson-content" id="math5">
-      <h4>تدريب في الضرب</h4>
-      <p>25 × 4 = ؟</p>
-      <p>36 × 5 = ؟</p>
-      <p>125 × 3 = ؟</p>
-    </div>
-  </div>
-
-  <div class="lesson-box">
-    <h3>🌍 التربية العلمية</h3>
-    <p>دروس في جسم الإنسان، الطبيعة والبيئة.</p>
-    <button class="btn" onclick="toggleLesson('science5')">عرض الدرس</button>
-    <div class="lesson-content" id="science5">
-      <h4>المحافظة على البيئة</h4>
-      <p>نحافظ على البيئة بعدم رمي النفايات، وغرس الأشجار، وترشيد استهلاك الماء.</p>
-    </div>
-  </div>
-
-</section>
-
-<section id="exercises">
-  <h2 class="section-title">✏️ فضاء التمارين</h2>
-  <div class="cards">
-    <div class="card">
-      <div class="emoji">📝</div>
-      <h3>تمارين السنة الأولى</h3>
-      <p>تمارين القراءة والحساب والكتابة.</p>
-      <a class="btn" href="#primaire1">ابدأ</a>
-    </div>
-    <div class="card">
-      <div class="emoji">📐</div>
-      <h3>تمارين السنة الخامسة</h3>
-      <p>تطبيقات في الرياضيات واللغة العربية.</p>
-      <a class="btn" href="#primaire5">ابدأ</a>
-    </div>
-  </div>
-</section>
-
-<section id="follow">
-  <h2 class="section-title">🏆 متابعة التلاميذ</h2>
-  <div class="about">
-    <p>النجاح يحتاج إلى الاجتهاد والمراجعة اليومية.</p>
-    <p>نساعد أبناءنا على تنظيم وقتهم وتشجيعهم على التعلم.</p>
-    <h3>كل يوم خطوة نحو التفوق ⭐</h3>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">📩 اتصل بنا</h2>
-  <div class="about">
-    <p>مرحباً بكم في مدرسة سراج التعليمية.</p>
-    <p>نسعد باهتمامكم بالتعلم والنجاح.</p>
-    <p>يمكنكم زيارة موقعنا ومتابعة الدروس والتمارين.</p>
-    <a class="btn" href="#home">العودة إلى الرئيسية</a>
-  </div>
+<section>
+ <h2 class="section-title">🌟 رسالة تشجيعية</h2>
+ <div class="about">
+  <h3>أنت قادر على النجاح!</h3>
+  <p>اقرأ، افهم، أجب، وواصل المحاولة.</p>
+  <p>كل يوم خطوة نحو التفوق.</p>
+ </div>
 </section>
 
 <footer>
-  <h3>📚 مدرسة سراج التعليمية</h3>
-  <p>مدرستنا طريقنا نحو النجاح</p>
-  <p>جميع الحقوق محفوظة © 2026</p>
+ <h3>📚 مدرسة سراج التعليمية</h3>
+ <p>مدرستنا طريقنا نحو النجاح</p>
+ <p>جميع الحقوق محفوظة © 2026</p>
 </footer>
 
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى">↑</button>
-
 <script>
-function toggleLesson(id) {
-  const lesson = document.getElementById(id);
-  if (!lesson) return;
-  lesson.classList.toggle('open');
+
+const lessons = [
+
+{
+ title:"1. فهم النص السردي",
+ icon:"📖",
+ objective:"التعرف على النص السردي واستخراج عناصره.",
+ explanation:`
+ <h4>ما هو النص السردي؟</h4>
+ <p>هو نص يروي أحداثاً وقعت لشخصيات في زمان ومكان معينين.</p>
+ <div class="example">
+ <b>مثال:</b><br>
+ استيقظ أحمد صباحاً، وتناول فطوره، ثم حمل محفظته وتوجه إلى المدرسة.
+ </div>
+ <h4>عناصر النص السردي:</h4>
+ <ul>
+ <li>الشخصيات: الأشخاص الذين يشاركون في الأحداث.</li>
+ <li>الزمان: الوقت الذي وقعت فيه الأحداث.</li>
+ <li>المكان: المكان الذي جرت فيه الأحداث.</li>
+ <li>الأحداث: الأعمال والوقائع.</li>
+ </ul>
+ `,
+ questions:[
+  {q:"النص السردي هو نص:",a:["يروي أحداثاً","يصف الألوان فقط","يعرض أرقاماً"],c:0},
+  {q:"من عناصر النص السردي:",a:["الشخصيات والزمان والمكان","الألوان فقط","الحروف فقط"],c:0},
+  {q:"الشخصيات هي:",a:["الأماكن","الأشخاص المشاركون في الأحداث","الأزمنة"],c:1}
+ ]
+},
+
+{
+ title:"2. النص الوصفي",
+ icon:"🌷",
+ objective:"التعرف على الوصف واستعمال الصفات.",
+ explanation:`
+ <h4>ما هو النص الوصفي؟</h4>
+ <p>هو نص يقدم وصفاً لشخص أو حيوان أو مكان أو شيء، ويبين صفاته ومميزاته.</p>
+ <div class="example">
+ <b>مثال:</b><br>
+ حديقتنا جميلة، أشجارها عالية، وأزهارها ملونة، ونسيمها عليل.
+ </div>
+ <h4>من أدوات الوصف:</h4>
+ <p>جميل، واسع، طويل، أخضر، نظيف، هادئ.</p>
+ `,
+ questions:[
+  {q:"النص الوصفي يهدف إلى:",a:["وصف شيء أو شخص","حساب الأعداد","ذكر العمليات"],c:0},
+  {q:"كلمة جميلة هي:",a:["فعل","صفة","حرف"],c:1},
+  {q:"من صفات الحديقة:",a:["تكتب","واسعة","ذهب"],c:1}
+ ]
+},
+
+{
+ title:"3. الجملة الاسمية والفعلية",
+ icon:"✏️",
+ objective:"التمييز بين الجملة الاسمية والجملة الفعلية.",
+ explanation:`
+ <h4>الجملة الاسمية</h4>
+ <p>تبدأ باسم وتتكون أساساً من مبتدأ وخبر.</p>
+ <div class="example">العلمُ نورٌ.<br>العلم: مبتدأ، نور: خبر.</div>
+ <h4>الجملة الفعلية</h4>
+ <p>تبدأ بفعل وتتكون غالباً من فعل وفاعل.</p>
+ <div class="example">نجحَ التلميذُ.<br>نجح: فعل، التلميذ: فاعل.</div>
+ `,
+ questions:[
+  {q:"الشمس مشرقة جملة:",a:["اسمية","فعلية","استفهامية"],c:0},
+  {q:"كتب التلميذ الدرس جملة:",a:["اسمية","فعلية","تعجبية"],c:1},
+  {q:"تبدأ الجملة الاسمية بـ:",a:["فعل","اسم","حرف جر"],c:1}
+ ]
+},
+
+{
+ title:"4. كان وأخواتها",
+ icon:"📝",
+ objective:"فهم عمل كان وأخواتها.",
+ explanation:`
+ <h4>القاعدة:</h4>
+ <p>كان وأخواتها أفعال ناسخة تدخل على الجملة الاسمية، فترفع المبتدأ ويسمى اسمها، وتنصب الخبر ويسمى خبرها.</p>
+ <div class="example">
+ <b>قبل دخول كان:</b> الجوُّ جميلٌ.<br>
+ <b>بعد دخول كان:</b> كان الجوُّ جميلاً.
+ </div>
+ <h4>من أخوات كان:</h4>
+ <p>كان، أصبح، أمسى، صار، ظل، بات، أضحى، ليس.</p>
+ <h4>الإعراب:</h4>
+ <p>كان: فعل ماض ناقص.</p>
+ <p>الجو: اسم كان مرفوع.</p>
+ <p>جميلاً: خبر كان منصوب.</p>
+ `,
+ questions:[
+  {q:"كان وأخواتها تدخل على:",a:["الجملة الاسمية","الجملة الفعلية فقط","حروف الجر"],c:0},
+  {q:"اسم كان يكون:",a:["منصوباً","مرفوعاً","مجروراً"],c:1},
+  {q:"خبر كان يكون:",a:["مرفوعاً","مجروراً","منصوباً"],c:2},
+  {q:"أصبح التلميذ ....",a:["مجتهدٌ","مجتهداً","مجتهدٍ"],c:1}
+ ]
+},
+
+{
+ title:"5. إن وأخواتها",
+ icon:"📚",
+ objective:"معرفة إن وأخواتها وعملها.",
+ explanation:`
+ <h4>القاعدة:</h4>
+ <p>إن وأخواتها حروف ناسخة تدخل على الجملة الاسمية، فتنصب المبتدأ ويسمى اسمها، وترفع الخبر ويسمى خبرها.</p>
+ <div class="example">
+ <b>قبل دخول إن:</b> العلمُ مفيدٌ.<br>
+ <b>بعد دخول إن:</b> إن العلمَ مفيدٌ.
+ </div>
+ <h4>من أخوات إن:</h4>
+ <p>إن، أن، كأن، لكن، ليت، لعل.</p>
+ `,
+ questions:[
+  {q:"إن وأخواتها تنصب:",a:["الخبر","المبتدأ","الفاعل"],c:1},
+  {q:"خبر إن يكون:",a:["مرفوعاً","منصوباً","مجروراً"],c:0},
+  {q:"إن التلميذَ ....",a:["مجتهدٌ","مجتهداً","مجتهدٍ"],c:0}
+ ]
+},
+
+{
+ title:"6. أزمنة الفعل",
+ icon:"⏰",
+ objective:"التعرف على الماضي والمضارع والأمر.",
+ explanation:`
+ <h4>الفعل الماضي:</h4>
+ <p>يدل على حدث وقع وانتهى.</p>
+ <div class="example">كتبَ التلميذ الدرس.</div>
+ <h4>الفعل المضارع:</h4>
+ <p>يدل على حدث يقع الآن أو في المستقبل.</p>
+ <div class="example">يكتبُ التلميذ الدرس.</div>
+ <h4>فعل الأمر:</h4>
+ <p>يدل على طلب القيام بعمل.</p>
+ <div class="example">اكتبْ الدرس.</div>
+ `,
+ questions:[
+  {q:"قرأ فعل:",a:["ماض","مضارع","أمر"],c:0},
+  {q:"يذهب فعل:",a:["ماض","مضارع","أمر"],c:1},
+  {q:"اجلس فعل:",a:["ماض","مضارع","أمر"],c:2}
+ ]
+},
+
+{
+ title:"7. الفاعل والمفعول به",
+ icon:"👩‍🏫",
+ objective:"استخراج الفاعل والمفعول به.",
+ explanation:`
+ <h4>الفاعل:</h4>
+ <p>هو من قام بالفعل، ويكون مرفوعاً.</p>
+ <h4>المفعول به:</h4>
+ <p>هو من وقع عليه الفعل، ويكون منصوباً.</p>
+ <div class="example">
+ قرأَ التلميذُ الكتابَ.<br>
+ الفاعل: التلميذُ.<br>
+ المفعول به: الكتابَ.
+ </div>
+ `,
+ questions:[
+  {q:"في جملة كتب أحمد الدرس، الفاعل هو:",a:["كتب","أحمد","الدرس"],c:1},
+  {q:"المفعول به هو:",a:["من قام بالفعل","من وقع عليه الفعل","الفعل"],c:1},
+  {q:"الفاعل يكون:",a:["مرفوعاً","منصوباً","مجروراً"],c:0}
+ ]
+},
+
+{
+ title:"8. المفرد والمثنى والجمع",
+ icon:"🔢",
+ objective:"التمييز بين المفرد والمثنى والجمع.",
+ explanation:`
+ <h4>المفرد:</h4>
+ <p>يدل على واحد: تلميذ.</p>
+ <h4>المثنى:</h4>
+ <p>يدل على اثنين: تلميذان.</p>
+ <h4>الجمع:</h4>
+ <p>يدل على ثلاثة فأكثر: تلاميذ.</p>
+ <div class="example">
+ كتاب ← كتابان ← كتب.<br>
+ زهرة ← زهرتان ← زهور.
+ </div>
+ `,
+ questions:[
+  {q:"كلمة تلميذان تدل على:",a:["مفرد","مثنى","جمع"],c:1},
+  {q:"كلمة أشجار تدل على:",a:["مفرد","مثنى","جمع"],c:2},
+  {q:"مثنى كلمة كتاب هو:",a:["كتب","كتابان","كاتب"],c:1}
+ ]
+},
+
+{
+ title:"9. التاء المربوطة والتاء المفتوحة",
+ icon:"🔤",
+ objective:"التمييز بين التاء المربوطة والمفتوحة.",
+ explanation:`
+ <h4>التاء المربوطة (ة):</h4>
+ <p>تأتي غالباً في نهاية الأسماء، مثل: مدرسة، زهرة، شجرة.</p>
+ <h4>التاء المفتوحة (ت):</h4>
+ <p>تكتب تاء مفتوحة، مثل: بيت، بنت، كتبت.</p>
+ <div class="example">
+ مدرسة – زهرة – بنت – بيت – كتبت.
+ </div>
+ `,
+ questions:[
+  {q:"كلمة مدرسة تنتهي بـ:",a:["تاء مربوطة","تاء مفتوحة","هاء"],c:0},
+  {q:"كلمة بيت تنتهي بـ:",a:["تاء مربوطة","تاء مفتوحة","ألف"],c:1},
+  {q:"كلمة زهرة تنتهي بـ:",a:["تاء مفتوحة","تاء مربوطة","ياء"],c:1}
+ ]
+},
+
+{
+ title:"10. التعبير الكتابي",
+ icon:"🖊️",
+ objective:"كتابة فقرة منظمة ومترابطة.",
+ explanation:`
+ <h4>كيف نكتب فقرة جيدة؟</h4>
+ <ul>
+ <li>نحدد الموضوع.</li>
+ <li>نكتب مقدمة مناسبة.</li>
+ <li>نعرض الأفكار بترتيب.</li>
+ <li>نختم بخاتمة جميلة.</li>
+ <li>نراجع الأخطاء الإملائية.</li>
+ </ul>
+ <div class="example">
+ <b>موضوع: أهمية العلم</b><br>
+ العلم نور يضيء طريق الإنسان، فهو يساعدنا على فهم العالم وتحقيق أحلامنا. لذلك يجب علينا الاجتهاد والمثابرة ومطالعة الكتب، لأن العلم أساس تقدم الأمم.
+ </div>
+ <h4>نشاط:</h4>
+ <p>اكتب فقرة من خمسة أسطر عن مدرستك.</p>
+ <textarea rows="5" placeholder="اكتب فقرتك هنا..."></textarea>
+ <button class="btn" onclick="window.print()">طباعة النشاط</button>
+ `,
+ questions:[
+  {q:"تبدأ الفقرة الجيدة بـ:",a:["مقدمة مناسبة","خاتمة فقط","أرقام عشوائية"],c:0},
+  {q:"من صفات التعبير الجيد:",a:["الأفكار المرتبة","الجمل غير المترابطة","كثرة الأخطاء"],c:0}
+ ]
 }
 
-const backTop = document.getElementById('backTop');
+];
 
-window.addEventListener('scroll', function() {
-  backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
+// عرض الدروس تلقائياً
+
+function renderLessons(){
+ const list=document.getElementById('lessonList');
+ list.innerHTML='';
+
+ lessons.forEach((lesson,index)=>{
+  const card=document.createElement('div');
+  card.className='lesson';
+
+  card.innerHTML=`
+   <h3>${lesson.icon} ${lesson.title}</h3>
+   <p>${lesson.objective}</p>
+   <button class="btn" onclick="toggleLesson(${index})">عرض الدرس والتمارين</button>
+   <button class="btn gold" onclick="printLesson(${index})">طباعة</button>
+   <div class="lesson-content" id="lesson${index}">
+    ${lesson.explanation}
+    <hr>
+    <h3>🎯 تمارين تقويمية</h3>
+    <div id="questions${index}"></div>
+    <button class="btn green" onclick="correctLesson(${index})">تصحيح الإجابات</button>
+    <div class="result" id="result${index}"></div>
+   </div>
+  `;
+
+  list.appendChild(card);
+
+  const qbox=card.querySelector('#questions'+index);
+
+  lesson.questions.forEach((q,j)=>{
+   let html=`
+    <div class="question">
+     <b>${j+1}. ${q.q}</b>
+   `;
+
+   q.a.forEach((answer,k)=>{
+    html+=`
+     <label>
+      <input type="radio" name="lesson${index}q${j}" value="${k}">
+      ${answer}
+     </label>
+    `;
+   });
+
+   html+='</div>';
+   qbox.innerHTML+=html;
+  });
+ });
+}
+
+function toggleLesson(index){
+ const current=document.getElementById('lesson'+index);
+ const wasOpen=current.classList.contains('open');
+
+ document.querySelectorAll('.lesson-content').forEach(el=>{
+  el.classList.remove('open');
+ });
+
+ if(!wasOpen){
+  current.classList.add('open');
+  current.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+}
+
+function correctLesson(index){
+ const questions=lessons[index].questions;
+ let score=0;
+ let answered=0;
+
+ questions.forEach((q,j)=>{
+  const selected=document.querySelector(
+   'input[name="lesson'+index+'q'+j+'"]:checked'
+  );
+
+  if(selected){
+   answered++;
+   if(Number(selected.value)===q.c) score++;
+  }
+ });
+
+ const output=document.getElementById('result'+index);
+
+ if(answered!==questions.length){
+  output.style.color='#b7791f';
+  output.textContent='أجب عن جميع الأسئلة أولاً. أجبت عن '+answered+' من '+questions.length+'.';
+  return;
+ }
+
+ output.style.color=score===questions.length?'green':'#1769aa';
+ output.textContent='نتيجتك: '+score+' من '+questions.length+
+ (score===questions.length?' – ممتاز! أحسنت ⭐':' – واصل المراجعة، أنت تستطيع!');
+}
+
+function printLesson(index){
+ const lesson=lessons[index];
+ const win=window.open('','_blank');
+
+ if(!win){
+  alert('يرجى السماح بفتح نافذة الطباعة.');
+  return;
+ }
+
+ win.document.write(`
+ <html dir="rtl" lang="ar">
+ <head>
+ <meta charset="UTF-8">
+ <title>${lesson.title}</title>
+ <style>
+ body{font-family:Tahoma,Arial;padding:25px;line-height:2}
+ h1,h2{color:#1769aa}
+ .example{border-right:4px solid #e9aa37;padding:10px}
+ </style>
+ </head>
+ <body>
+ <h1>مدرسة سراج التعليمية</h1>
+ <h2>${lesson.title}</h2>
+ ${lesson.explanation}
+ <h2>التمارين</h2>
+ ${lesson.questions.map((q,i)=>`
+ <p>${i+1}. ${q.q}</p>
+ ${q.a.map(a=>'<p>□ '+a+'</p>').join('')}
+ `).join('')}
+ <p>الاسم واللقب: ................................</p>
+ <p>القسم: ........................................</p>
+ <script>window.onload=function(){window.print()}<\/script>
+ </body>
+ </html>
+ `);
+
+ win.document.close();
+}
+
+const examQuestions=[
+ {q:"الجملة الاسمية تبدأ بـ:",a:["اسم","فعل","حرف"],c:0},
+ {q:"خبر كان يكون:",a:["مرفوعاً","منصوباً","مجروراً"],c:1},
+ {q:"إن وأخواتها تنصب:",a:["المبتدأ","الخبر","الفاعل"],c:0},
+ {q:"الفاعل هو:",a:["من وقع عليه الفعل","من قام بالفعل","الفعل"],c:1},
+ {q:"يكتب فعل:",a:["ماض","مضارع","أمر"],c:1},
+ {q:"كلمة كتابان تدل على:",a:["مفرد","مثنى","جمع"],c:1},
+ {q:"النص الوصفي يهدف إلى:",a:["الوصف","السرد فقط","الحساب"],c:0},
+ {q:"كلمة مدرسة تنتهي بـ:",a:["تاء مفتوحة","تاء مربوطة","ألف"],c:1}
+];
+
+function startExam(){
+ const area=document.getElementById('examArea');
+
+ area.innerHTML='<div class="exercise"><h3>اختبار اللغة العربية</h3><p>أجب عن الأسئلة التالية:</p><div id="examQuestions"></div><button class="btn green" onclick="correctExam()">إنهاء الاختبار</button><div id="examResult" class="result"></div></div>';
+
+ const box=document.getElementById('examQuestions');
+
+ examQuestions.forEach((q,i)=>{
+  let html='<div class="question"><b>'+ (i+1)+'. '+q.q+'</b>';
+
+  q.a.forEach((a,j)=>{
+   html+='<label><input type="radio" name="exam'+i+'" value="'+j+'">'+a+'</label>';
+  });
+
+  html+='</div>';
+  box.innerHTML+=html;
+ });
+
+ area.scrollIntoView({behavior:'smooth'});
+}
+
+function correctExam(){
+ let score=0;
+ let answered=0;
+
+ examQuestions.forEach((q,i)=>{
+  const selected=document.querySelector('input[name="exam'+i+'"]:checked');
+  if(selected){
+   answered++;
+   if(Number(selected.value)===q.c) score++;
+  }
+ });
+
+ const result=document.getElementById('examResult');
+
+ if(answered!==examQuestions.length){
+  result.style.color='#b7791f';
+  result.textContent='أكمل جميع الأسئلة أولاً. أجبت عن '+answered+' من '+examQuestions.length+'.';
+  return;
+ }
+
+ result.style.color='green';
+ result.innerHTML='🌟 انتهى الاختبار!<br>علامتك: '+score+' / '+examQuestions.length+
+ '<br>النسبة: '+Math.round(score/examQuestions.length*100)+'%';
+}
+
+renderLessons();
+
 </script>
-
 </body>
 </html>
