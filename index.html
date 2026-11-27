@@ -1,131 +1,485 @@
+HTML
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173b63">
 <title>مدرسة سراج التعليمية</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#202b35;font-family:Tahoma,Arial,sans-serif;line-height:1.8}
-header{background:linear-gradient(120deg,#153b5a,#287fae);color:#fff;text-align:center;padding:24px 12px}
-header h1{margin:0;font-size:28px}header p{margin:3px}
-main{max-width:1050px;margin:22px auto;padding:0 12px}.panel{background:#fff;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 3px 15px #153b5a12}
-h2,h3{color:#174f78}button{font:inherit;border:0;border-radius:9px;padding:10px 15px;background:#e7f1f8;color:#174f78;font-weight:bold;cursor:pointer}
-button.primary{background:#176f9f;color:white}.hidden{display:none!important}
-.subject-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:15px}
-.subject-card{background:#f0f7fc;border:1px solid #d8e8f2;border-radius:14px;padding:18px 10px;text-align:center;cursor:pointer;min-height:145px}
-.subject-card .emoji{font-size:38px}.subject-card h3{margin:4px 0}.subject-card p{font-size:13px;margin:0;color:#60717d}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.crumb{color:#61717d;font-size:13px}
-.term-card{border:1px solid #dce7ef;border-radius:12px;padding:14px;margin:10px 0;background:#fbfdff}
-.paper{direction:rtl;background:#fff;color:#111;border:2px solid #333;max-width:850px;margin:16px auto;padding:22px;font-family:Tahoma,Arial,sans-serif;line-height:1.7}
-.paper-head{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-bottom:2px solid #222;padding-bottom:10px;font-size:13px;font-weight:bold}
-.paper-head div:last-child{text-align:left}.paper-title{text-align:center;background:#fff0a6;color:#8d2118;font-size:21px;font-weight:bold;padding:8px;margin:10px 0}
-.paper-meta{display:flex;justify-content:space-between;flex-wrap:wrap;border:1px solid #777;padding:7px;font-weight:bold}
-.paper h3{color:#111;font-size:17px;margin:14px 0 5px}.passage{border:1px solid #888;padding:11px;margin:8px 0;text-align:justify}
-.section-title{font-weight:bold;color:#111;text-decoration:underline;margin:13px 0 5px}
-.paper ol{padding-right:25px;margin:5px 0}.paper li{margin:8px 0}
-.line{height:25px;border-bottom:1px dotted #333}.longline{height:28px;border-bottom:1px dotted #555}
-.paper table{border-collapse:collapse;width:100%;margin:8px 0}.paper td,.paper th{border:1px solid #222;padding:8px;text-align:center;height:38px}
-.ltr{direction:ltr;text-align:left;font-family:Arial,sans-serif}
-.answer-key{background:#f2f8fc;border:1px solid #cbdde9;border-radius:12px;padding:14px;margin:14px 0}
-.small{font-size:12px;color:#64717b}.notice{background:#fff8e7;border-right:4px solid #e0b83f;padding:10px;border-radius:7px}
-footer{text-align:center;background:#153b5a;color:#fff;padding:16px;margin-top:25px}
-@media(max-width:560px){header h1{font-size:23px}.panel{padding:13px}.paper{padding:11px}.paper-head{font-size:10px}.paper-title{font-size:17px}.subject-card{min-height:125px}}
-@media print{body{background:#fff}header,footer,.no-print{display:none!important}main{margin:0;padding:0;max-width:none}.panel{box-shadow:none;padding:0;margin:0}.paper{border:0;max-width:none;margin:0;padding:8mm;min-height:270mm;page-break-after:always}.paper:last-child{page-break-after:auto}.answer-key{page-break-before:always}}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Tahoma,Arial,sans-serif;
+ background:#f3f6fb;
+ color:#24364b;
+}
+header{
+ background:linear-gradient(135deg,#102d50,#24669a);
+ color:white;
+ padding:25px 15px;
+ text-align:center;
+ border-radius:0 0 25px 25px;
+}
+.logo{font-size:45px}
+header h1{margin:8px 0;font-size:27px}
+header p{color:#e2edf8;margin:5px}
+nav{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:8px;
+ padding:15px 8px;
+ background:white;
+ position:sticky;
+ top:0;
+ z-index:10;
+ box-shadow:0 2px 8px #0001;
+}
+button{
+ border:0;
+ cursor:pointer;
+ font-family:inherit;
+}
+.navbtn{
+ background:#edf3fa;
+ color:#173b63;
+ padding:11px 15px;
+ border-radius:12px;
+ font-weight:bold;
+}
+.navbtn:hover,.navbtn.active{
+ background:#173b63;
+ color:white;
+}
+main{
+ max-width:1100px;
+ margin:auto;
+ padding:18px;
+}
+.welcome{
+ background:white;
+ border-radius:18px;
+ padding:20px;
+ margin-bottom:20px;
+ box-shadow:0 3px 12px #0000000a;
+}
+h2{color:#173b63}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+ gap:13px;
+}
+.card{
+ background:white;
+ padding:18px 12px;
+ border-radius:17px;
+ text-align:center;
+ box-shadow:0 3px 12px #0000000a;
+ border:1px solid #e7edf4;
+}
+.card .emoji{font-size:35px}
+.card h3{font-size:16px;margin:10px 0;color:#173b63}
+.card p{font-size:12px;color:#718096}
+.action{
+ background:#173b63;
+ color:white;
+ border-radius:11px;
+ padding:11px 15px;
+ margin:5px;
+ font-weight:bold;
+}
+.action:hover{background:#286b9d}
+.gold{background:#d4a23c;color:#172b43}
+.back{
+ background:#e8edf5;
+ color:#173b63;
+ padding:10px 17px;
+ border-radius:10px;
+ margin-bottom:15px;
+}
+.subject{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ text-align:right;
+}
+.subject .emoji{font-size:32px}
+.subject .action{font-size:12px;padding:9px}
+.lesson{
+ background:white;
+ padding:17px;
+ border-radius:14px;
+ margin:12px 0;
+ line-height:1.9;
+ border-right:4px solid #d4a23c;
+}
+.question{
+ background:white;
+ border-radius:15px;
+ padding:20px;
+ margin:12px 0;
+ line-height:2;
+}
+.answer{
+ display:block;
+ width:100%;
+ text-align:right;
+ padding:12px;
+ background:#edf3fa;
+ color:#173b63;
+ margin:7px 0;
+ border-radius:10px;
+}
+.answer:hover{background:#dceafa}
+.answer.correct{background:#d8f4df}
+.answer.wrong{background:#ffe0e0}
+footer{
+ background:#173b63;
+ color:white;
+ text-align:center;
+ padding:22px;
+ margin-top:35px;
+}
+.hidden{display:none}
+#result{
+ font-size:20px;
+ font-weight:bold;
+ color:#16834a;
+ margin:15px 0;
+}
+input{
+ padding:12px;
+ border:1px solid #ccd6e3;
+ border-radius:10px;
+ width:100%;
+ margin:8px 0;
+ font-family:inherit;
+}
 </style>
 </head>
+
 <body>
-<header><h1>📚 مدرسة سراج التعليمية</h1><p>مدرستنا طريقنا نحو النجاح</p><p>السنة الخامسة ابتدائي — فضاء الدروس والاختبارات</p></header>
+
+<header>
+ <div class="logo">🏫</div>
+ <h1>مدرسة سراج التعليمية</h1>
+ <p>مدرستنا طريقنا نحو النجاح</p>
+ <p>منصة التعليم الابتدائي الجزائرية</p>
+</header>
+
+<nav>
+ <button class="navbtn active" onclick="home()">🏠 الرئيسية</button>
+ <button class="navbtn" onclick="showAbout()">🌟 عن المدرسة</button>
+</nav>
+
 <main>
-<section class="panel no-print" id="home">
-<h2>🏫 بنك الاختبارات</h2>
-<p>اختاري المادة التي تريدين مراجعتها. لكل مادة بنك اختبارات مستقل، مقسم حسب الفصول.</p>
-<div class="subject-grid">
-<div class="subject-card" onclick="openSubject('ar')"><div class="emoji">📖</div><h3>اللغة العربية</h3><p>دروس • اختبارات • وضعيات إدماجية</p></div>
-<div class="subject-card" onclick="openSubject('math')"><div class="emoji">➗</div><h3>الرياضيات</h3><p>عمليات • مسائل • هندسة وقياس</p></div>
-<div class="subject-card" onclick="openSubject('fr')"><div class="emoji">🇫🇷</div><h3>اللغة الفرنسية</h3><p>Compréhension • Langue • Production</p></div>
-<div class="subject-card" onclick="openSubject('en')"><div class="emoji">🇬🇧</div><h3>اللغة الإنجليزية</h3><p>Reading • Tasks • Writing</p></div>
-</div>
-<p class="notice small">النماذج تدريبية أصلية للمراجعة، وليست اختبارات رسمية صادرة عن وزارة التربية. يرجى مطابقة التدرج مع ما درسه التلميذ في القسم.</p>
+
+<section id="home">
+ <div class="welcome">
+  <h2>🌷 مرحباً بك في فضاء سراج</h2>
+  <p>هنا تبدأ رحلة التعلم والتميز. اختر مستواك الدراسي وانطلق!</p>
+ </div>
+
+ <h2>📚 المستويات التعليمية</h2>
+ <div class="grid" id="levels"></div>
 </section>
-<section class="panel hidden no-print" id="subjectPage">
-<div class="toolbar"><button onclick="goHome()">↩ العودة للمواد</button></div>
-<div class="crumb">مدرسة سراج التعليمية ← بنك الاختبارات ← <span id="subjectName"></span></div>
-<h2 id="subjectTitle"></h2>
-<div class="toolbar"><button class="primary" id="showLessons" onclick="showLessons()">📘 الدروس</button><button id="showTests" onclick="showTests()">📝 بنك الاختبارات</button></div>
-<div id="lessonArea"></div>
-<div id="testArea" class="hidden">
-<h3>اختاري الفصل الدراسي</h3>
-<div class="toolbar" id="terms"></div>
-<div id="examList"></div>
-</div>
+
+<section id="content" class="hidden">
+ <button class="back" onclick="home()">⬅ العودة للرئيسية</button>
+ <h2 id="pageTitle"></h2>
+ <div id="pageContent"></div>
 </section>
-<section class="panel hidden" id="examPage">
-<div class="toolbar no-print"><button onclick="backToTests()">↩ العودة إلى بنك المادة</button><button class="primary" onclick="window.print()">🖨️ طباعة ورقة الاختبار</button></div>
-<div id="paperHost"></div>
-<div class="toolbar no-print"><button class="primary" onclick="toggleKey(true)">إظهار التصحيح النموذجي</button><button onclick="toggleKey(false)">إخفاء التصحيح</button></div>
-<div id="keyHost" class="answer-key hidden"></div>
+
+<section id="about" class="hidden">
+ <button class="back" onclick="home()">⬅ العودة</button>
+ <div class="welcome">
+  <h2>🌟 مدرسة سراج التعليمية</h2>
+  <p>مشروع تعليمي يهدف إلى مساعدة تلاميذ المرحلة الابتدائية على التعلم والتفوق.</p>
+  <p>نوفر فضاءً للدروس والتمارين والاختبارات لجميع المستويات.</p>
+  <h3>مدرستنا طريقنا نحو النجاح ❤️</h3>
+ </div>
 </section>
+
 </main>
-<footer>مدرسة سراج التعليمية ❤️</footer>
+
+<footer>
+ <h3>🏫 مدرسة سراج التعليمية</h3>
+ <p>مدرستنا طريقنا نحو النجاح</p>
+ <small>جميع الحقوق محفوظة © 2026</small>
+</footer>
+
 <script>
-const subjects={
-ar:{name:"اللغة العربية",lessons:[
-["فهم النص","أقرأ السند جيداً، وأحدد الفكرة العامة والأفكار الأساسية، ثم أجيب بجمل واضحة.","أستخرج الجواب من النص وأدعمه بقرينة."],
-["الجملة الاسمية والفعلية","الجملة الاسمية تبدأ باسم، وتتكون غالباً من مبتدأ وخبر. والجملة الفعلية تبدأ بفعل.","العلم نور. / يقرأ التلميذ."],
-["كان وأخواتها وإن وأخواتها","كان وأخواتها ترفع الاسم وتنصب الخبر، وإن وأخواتها تنصب الاسم وترفع الخبر.","كان الجو جميلاً. / إن العلم مفيد."],
-["الفاعل والمفعول به","الفاعل من قام بالفعل، والمفعول به من وقع عليه الفعل.","حفظ التلميذ القصيدة."],
-["المفرد والمثنى والجمع","المفرد يدل على واحد، والمثنى على اثنين، والجمع على أكثر من اثنين.","كتاب، كتابان، كتب."],
-["التعبير الكتابي","أكتب مقدمة وعرضاً وخاتمة، وأستعمل أدوات الربط وعلامات الوقف وأراجع الأخطاء."]
-],exams:[
-{title:"اختبار الفصل الأول",duration:"ساعة ونصف",text:"إن النظافة سلوك حضاري يحافظ على صحة الإنسان ويحميه من الأمراض. لذلك يحرص التلاميذ على نظافة أقسامهم وساحة مدرستهم، ولا يرمون الأوراق والأوساخ في الأرض. فالمدرسة النظيفة مكان مريح للتعلم، والمحافظة عليها مسؤولية الجميع.",parts:[["البناء الفكري (3 نقاط)",["اقترح عنواناً مناسباً للنص.","لماذا تعد النظافة ضرورية؟","استخرج سلوكين يدلان على المحافظة على المدرسة.","اشرح: يحرص – مسؤولية."]],["البناء اللغوي (3 نقاط)",["استخرج من النص فعلاً مضارعاً وجمعاً وصفة.","أدخل «إن» على الجملة: النظافة سلوك حضاري.","حوّل إلى المثنى: التلميذ يحافظ على قسمه.","أعرب كلمة «التلاميذ» في النص حسب موقعها."]],["الوضعية الإدماجية (4 نقاط)",["اكتب فقرة من 8 إلى 10 أسطر تنصح فيها زملاءك بالمحافظة على نظافة المدرسة، موظفاً جملة اسمية وصفة وفعلًا مضارعاً."]]],key:["النظافة / لأنها تحافظ على صحة الإنسان وتحميه من الأمراض. / تنظيف الأقسام والساحة وعدم رمي الأوساخ. / يحرص: يهتم؛ مسؤولية: واجب.","يحرص، يرمون / التلاميذ أو الأمراض / نظافة: إن النظافة سلوك حضاري / التلميذان يحافظان على قسمهما. الإعراب يحدد حسب الجملة المستعملة.","تقبل فقرة مترابطة تحترم التعليمة: الموضوع 1ن، تنظيم الأفكار 1ن، سلامة اللغة 1ن، توظيف المطلوب والإملاء 1ن."]},
-{title:"اختبار الفصل الثاني",duration:"ساعة ونصف",text:"القراءة غذاء العقل، فهي توسع معارف الإنسان وتساعده على التفكير السليم. يخصص التلميذ المجتهد وقتاً للمطالعة، فيتعلم كلمات جديدة ويكتسب معلومات نافعة. لذلك ينبغي أن نجعل الكتاب صديقاً لنا، وأن نحافظ عليه ونستفيد مما يقدمه.",parts:[["البناء الفكري (3 نقاط)",["ضع عنواناً مناسباً للنص.","اذكر فائدتين للمطالعة.","هات مرادف «يخصص» وضد «جديدة».","استخرج الفكرة العامة."]],["البناء اللغوي (3 نقاط)",["استخرج فعلاً مضارعاً وفاعله.","أدخل «كان» على الجملة: القراءة مفيدة.","حوّل «التلميذ المجتهد» إلى المثنى.","استخرج جمعاً من النص."]],["الوضعية الإدماجية (4 نقاط)",["اكتب فقرة من 8 إلى 10 أسطر تبين فيها فوائد المطالعة، موظفاً فعلاً مضارعاً وجملة اسمية."]]],key:["القراءة غذاء العقل / توسع المعارف وتساعد على التفكير وتعلم كلمات جديدة. / يخصص: يحدد؛ جديدة × قديمة. / أهمية القراءة.","يتعلم: التلميذ / كان القراءة مفيدة (والأفصح: كانت القراءة مفيدة) / التلميذان المجتهدان / كلمات أو معلومات.","تقبل فقرة سليمة مترابطة تبرز فوائد القراءة."]},
-{title:"اختبار الفصل الثالث",duration:"ساعة ونصف",text:"الوطن بيتنا الكبير، نحبه ونعتز به ونفخر بتاريخه وطبيعته الجميلة. ومن واجب كل مواطن أن يحافظ على نظافة شوارعه، ويحترم قوانينه، ويجتهد في عمله ودراسته حتى يساهم في بنائه وتقدمه.",parts:[["البناء الفكري (3 نقاط)",["اقترح عنواناً للنص.","اذكر ثلاثة واجبات نحو الوطن وردت في النص.","اشرح: نعتز – يساهم.","استخرج الفكرة العامة."]],["البناء اللغوي (3 نقاط)",["استخرج فعلاً مضارعاً وجمع تكسير وصفة.","أدخل «كان» على: الوطن جميل.","حوّل «مواطن» إلى جمع.","أعرب كلمة «الوطن» في بداية النص."]],["الوضعية الإدماجية (4 نقاط)",["اكتب فقرة من 8 إلى 10 أسطر عن حب الوطن وواجبك نحوه، موظفاً فعلاً مضارعاً وصفة وجملة اسمية."]]],key:["واجبنا نحو الوطن / المحافظة على النظافة واحترام القوانين والاجتهاد. / نعتز: نفتخر؛ يساهم: يشارك. / حب الوطن.","يحافظ / شوارع / الجميلة / كان الوطن جميلاً / مواطنون / مبتدأ مرفوع.","تقبل فقرة مترابطة تحترم المطلوب."]}]},
-math:{name:"الرياضيات",lessons:[
-["الأعداد الطبيعية","أقرأ الأعداد وأكتبها وأفككها حسب مراتبها وأقارن بينها.","46 305 = 40 000 + 6 000 + 300 + 5."],
-["العمليات الأربع","أنجز الجمع والطرح والضرب والقسمة وأتحقق من النتائج.","236 × 4 = 944."],
-["الكسور والأعداد العشرية","أتعرف البسط والمقام وأقارن الأعداد العشرية حسب الدروس المدروسة.","0,7 أكبر من 0,5."],
-["القياس","أستعمل وحدات الطول والكتلة والسعة والزمن وأحول بينها.","1 m = 100 cm، و1 kg = 1000 g."],
-["الهندسة والمحيط","أتعرف الأشكال والزوايا وأحسب المحيط والمساحة وفق القواعد المدروسة.","محيط المستطيل = 2 × (الطول + العرض)."]
-],exams:[
-{title:"اختبار الفصل الأول",duration:"ساعة ونصف",parts:[["التمرين الأول: الأعداد (3 نقاط)",["اكتب بالأرقام: خمسة وثلاثون ألفاً ومئتان وثمانية عشر.","فكك العدد 46 305 حسب مراتب أرقامه.","رتب تصاعدياً: 8 450 — 8 405 — 8 540."]],["التمرين الثاني: العمليات (4 نقاط)",["أنجز: 4 586 + 2 739.","أنجز: 8 000 − 3 675.","احسب: 236 × 4.","احسب: 864 ÷ 8."]],["الوضعية الإدماجية (3 نقاط)",["اشترت مدرسة 125 كراساً بسعر 35 دج للكراس الواحد. احسب ثمن الكراسات كلها. إذا دفعت 5 000 دج، فكم يرجع لها؟"]]],key:["35 218 / 40 000 + 6 000 + 300 + 5 / 8 405، 8 450، 8 540.","7 325 / 4 325 / 944 / 108.","125 × 35 = 4 375 دج. الباقي 625 دج."]},
-{title:"اختبار الفصل الثاني",duration:"ساعة ونصف",parts:[["التمرين الأول: الكسور والأعداد العشرية (3 نقاط)",["اكتب الكسر الذي يمثل ثلاثة أجزاء من أربعة أجزاء متساوية.","قارن: 0,7 ... 0,5.","اكتب 3,25 بالحروف."]],["التمرين الثاني: القياس (3 نقاط)",["حوّل 4 m إلى cm.","حوّل 2 kg و300 g إلى g.","حوّل ساعتين وربعاً إلى دقائق."]],["الوضعية الإدماجية (4 نقاط)",["اشترى تاجر 12 صندوقاً، في كل صندوق 24 قارورة. باع 175 قارورة. احسب عدد القارورات المتبقية."]]],key:["3/4 / 0,7 > 0,5 / ثلاثة وحدات وخمسة وعشرون جزءاً من المئة.","400 cm / 2300 g / 135 دقيقة.","12 × 24 = 288، والمتبقي 288 − 175 = 113 قارورة."]},
-{title:"اختبار الفصل الثالث",duration:"ساعة ونصف",parts:[["التمرين الأول: الهندسة (3 نقاط)",["ارسم مستطيلاً طوله 6 cm وعرضه 3 cm.","ما عدد أضلاع المستطيل؟ وما نوع زواياه؟","ارسم زاوية قائمة باستعمال الكوس."]],["التمرين الثاني: المحيط والمساحة (3 نقاط)",["احسب محيط مستطيل طوله 9 cm وعرضه 4 cm.","احسب مساحة المستطيل نفسه.","مربع طول ضلعه 5 cm، احسب محيطه."]],["الوضعية الإدماجية (4 نقاط)",["حديقة مستطيلة طولها 15 m وعرضها 8 m. احسب طول السياج اللازم لإحاطتها، ثم احسب مساحتها."]]],key:["رسم صحيح بالأبعاد / أربعة أضلاع وأربع زوايا قائمة / زاوية 90°.","26 cm / 36 cm² / 20 cm.","المحيط 46 m، المساحة 120 m²."]}]},
-fr:{name:"اللغة الفرنسية",lessons:[
-["Se présenter","Je m'appelle… / J'ai … ans. / J'habite à…","Je m'appelle Lina. J'ai dix ans."],
-["Les articles","Le, la, l', les sont des articles définis. Un, une, des sont indéfinis.","Le livre, la table, un stylo."],
-["Être et avoir","Être : je suis, tu es, il est. Avoir : j'ai, tu as, il a.","Elle est gentille. Ils ont des cahiers."],
-["Les verbes en -er","Au présent : je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent.","Nous jouons dans la cour."],
-["Le féminin et le pluriel","Souvent, on ajoute -e au féminin et -s au pluriel.","petit / petite ; un livre / des livres."],
-["La description","Pour décrire, j'utilise des adjectifs et des phrases simples.","Le lion est grand et fort."]
-],exams:[
-{title:"Contrôle du premier trimestre",duration:"1 h 30",text:"Lina est une élève de cinquième année. Elle a dix ans et elle habite à Alger. Chaque matin, elle prépare son cartable. Elle aime l'école, la lecture et les activités avec ses camarades.",parts:[["Activité 1 : Compréhension de l'écrit (3 pts)",["Quel est le prénom de l'élève ?","Quel âge a Lina ?","Où habite-t-elle ?","Relève une activité qu'elle aime."]],["Activité 2 : Fonctionnement de la langue (3 pts)",["Complète : Je … un élève. (suis / es / est)","Mets au pluriel : un cartable.","Complète : Lina … dix ans. (a / ont / est)","Trouve un nom féminin dans le texte."]],["Production écrite (4 pts)",["Présente-toi en quatre ou cinq phrases. Utilise ton prénom, ton âge et ta ville."]]],key:["Lina / dix ans / à Alger / l'école, la lecture ou les activités.","suis / des cartables / a / élève ou lecture.","Exemple : Je m'appelle … . J'ai dix ans. J'habite à … . Je suis en cinquième année primaire."]},
-{title:"Contrôle du deuxième trimestre",duration:"1 h 30",text:"Dans la forêt, le lion est un animal sauvage. Il est fort et rapide. Il vit avec sa famille. Le petit lion joue près de sa mère et apprend à chercher sa nourriture.",parts:[["Activité 1 : Compréhension de l'écrit (3 pts)",["De quel animal parle le texte ?","Comment est le lion ?","Avec qui vit-il ?","Que fait le petit lion ?"]],["Activité 2 : Fonctionnement de la langue (3 pts)",["Mets au féminin : petit.","Complète : Nous … dans la cour. (jouons / joue / jouez)","Mets au pluriel : un animal sauvage.","Choisis : La lionne (est / sont) rapide."]],["Production écrite (4 pts)",["Décris ton animal préféré en quatre ou cinq phrases."]]],key:["Le lion / fort et rapide / avec sa famille / il joue près de sa mère et apprend à chercher sa nourriture.","petite / jouons / des animaux sauvages / est.","Exemple : Mon animal préféré est le chat. Il est petit et joli. Il aime jouer."]},
-{title:"Contrôle du troisième trimestre",duration:"1 h 30",text:"La famille de Sami habite dans une belle maison. Le père travaille dans un bureau. La mère prépare le repas. Les enfants rangent leurs chambres et aident leurs parents.",parts:[["Activité 1 : Compréhension de l'écrit (3 pts)",["Où habite la famille ?","Où travaille le père ?","Que prépare la mère ?","Comment les enfants aident-ils leurs parents ?"]],["Activité 2 : Fonctionnement de la langue (3 pts)",["Complète : Ils … leurs chambres. (range / rangent)","Mets au féminin : beau.","Mets au pluriel : une chambre.","Complète : Nous … une famille. (sommes / êtes / suis)"]],["Production écrite (4 pts)",["Écris quatre ou cinq phrases pour présenter ta famille."]]],key:["Dans une belle maison / dans un bureau / le repas / ils rangent leurs chambres et aident leurs parents.","rangent / belle / des chambres / sommes.","Exemple : Ma famille est gentille. Nous habitons dans une maison. Nous nous aidons."]}]},
-en:{name:"اللغة الإنجليزية",lessons:[
-["Greetings","Hello, Good morning, Good afternoon, Goodbye.","Hello! How are you? I am fine, thank you."],
-["Introducing yourself","My name is… / I am … years old. / I live in…","My name is Sara. I am ten years old."],
-["Jobs and workplaces","doctor–hospital, teacher–school, mechanic–garage, farmer–farm.","A teacher works in a school."],
-["Family","father, mother, brother, sister, grandfather, grandmother.","This is my mother."],
-["Animals and adjectives","lion, rabbit, elephant; big, small, strong, fast.","A lion is strong. A rabbit is small."],
-["School things and colours","book, pen, pencil, ruler, bag; red, blue, green, yellow.","My school bag is blue."]
-],exams:[
-{title:"First term test",duration:"1 hour",text:"Hello! My name is Adam. I am ten years old. I live in Algeria. I am a pupil. I have a blue school bag, two pencils and a book.",parts:[["Task one: Read and answer (3 pts)",["What is his name?","How old is Adam?","Where does he live?","What colour is his school bag?"]],["Task two: Choose the correct answer (3 pts)",["I … a pupil. (am / is / are)","She … ten years old. (am / is / are)","The plural of book is … (books / bookes / book)","The sun is … (yellow / blue / black)."]],["Task three: Write (4 pts)",["Write four sentences to introduce yourself."]]],key:["Adam / ten years old / in Algeria / blue.","am / is / books / yellow.","Example: Hello! My name is … . I am ten years old. I live in Algeria. I am a pupil."]},
-{title:"Second term test",duration:"1 hour",text:"My uncle is a doctor. He works in a hospital. My aunt is a teacher. She works in a school. My father is a mechanic. He works in a garage.",parts:[["Task one: Read and answer (3 pts)",["What is the uncle's job?","Where does the doctor work?","What is the aunt's job?","Where does the mechanic work?"]],["Task two: Match (3 pts)",["Doctor → school / hospital / garage","Teacher → hospital / school / farm","Mechanic → garage / school / restaurant"]],["Task three: Complete (4 pts)",["A farmer works on a … .","A teacher works in a … .","Write two sentences about jobs in your family."]]],key:["A doctor / in a hospital / a teacher / in a garage.","Doctor–hospital; Teacher–school; Mechanic–garage.","farm / school. Example: My father is a … . He works in a … ."]},
-{title:"Third term test",duration:"1 hour",text:"I like animals. The lion is strong. The rabbit is small. The elephant is big. My favourite animal is the rabbit because it is cute and friendly.",parts:[["Task one: Read and answer (3 pts)",["Which animal is strong?","Which animal is small?","What is the favourite animal?","Why does the writer like the rabbit?"]],["Task two: Choose (3 pts)",["The opposite of big is … (small / tall / strong)","A lion … strong. (is / are / am)","Two … (book / books / bookes)","The elephant is … (big / tiny / weak)."]],["Task three: Write (4 pts)",["Write three or four sentences about your favourite animal."]]],key:["The lion / the rabbit / the rabbit / because it is cute and friendly.","small / is / books / big.","Example: My favourite animal is the lion. It is strong. It is a wild animal."]}]}
+const levels=[
+ {name:"السنة الأولى ابتدائي",icon:"🌸"},
+ {name:"السنة الثانية ابتدائي",icon:"🌷"},
+ {name:"السنة الثالثة ابتدائي",icon:"📘"},
+ {name:"السنة الرابعة ابتدائي",icon:"⭐"},
+ {name:"السنة الخامسة ابتدائي",icon:"🎓"}
+];
+
+const subjects=[
+ {name:"اللغة العربية",icon:"📖"},
+ {name:"الرياضيات",icon:"➗"},
+ {name:"اللغة الفرنسية",icon:"🇫🇷"},
+ {name:"اللغة الإنجليزية",icon:"🇬🇧"},
+ {name:"التربية الإسلامية",icon:"🕌"},
+ {name:"التاريخ والجغرافيا",icon:"🌍"},
+ {name:"العلوم",icon:"🔬"}
+];
+
+const lessons={
+ "اللغة العربية":[
+  "القراءة وفهم النص",
+  "الجملة الاسمية والجملة الفعلية",
+  "الاسم والفعل والحرف",
+  "المفرد والمثنى والجمع",
+  "الفاعل والمفعول به",
+  "التعبير الكتابي"
+ ],
+ "الرياضيات":[
+  "الأعداد والأرقام",
+  "الجمع والطرح",
+  "الضرب والقسمة",
+  "الكسور",
+  "القياس والتحويلات",
+  "الهندسة والأشكال"
+ ],
+ "اللغة الفرنسية":[
+  "Lecture et compréhension",
+  "Le nom et le verbe",
+  "Les adjectifs",
+  "La phrase",
+  "Production écrite"
+ ],
+ "اللغة الإنجليزية":[
+  "Greetings",
+  "Numbers and colours",
+  "Family",
+  "Animals",
+  "Days and months"
+ ],
+ "التربية الإسلامية":[
+  "القرآن الكريم",
+  "العقيدة الإسلامية",
+  "العبادات",
+  "الأخلاق والآداب"
+ ],
+ "التاريخ والجغرافيا":[
+  "الزمن والتاريخ",
+  "المعالم التاريخية",
+  "الموقع الجغرافي",
+  "البيئة والطبيعة"
+ ],
+ "العلوم":[
+  "جسم الإنسان",
+  "الحيوانات والنباتات",
+  "التغذية",
+  "الماء والهواء"
+ ]
 };
-let current='ar',term=0,examIndex=0;
-const $=id=>document.getElementById(id);
-function openSubject(k){current=k;term=0;examIndex=0;$('home').classList.add('hidden');$('examPage').classList.add('hidden');$('subjectPage').classList.remove('hidden');$('subjectName').textContent=subjects[k].name;$('subjectTitle').textContent='📚 '+subjects[k].name;showLessons()}
-function goHome(){$('subjectPage').classList.add('hidden');$('examPage').classList.add('hidden');$('home').classList.remove('hidden')}
-function showLessons(){$('lessonArea').classList.remove('hidden');$('testArea').classList.add('hidden');$('showLessons').classList.add('primary');$('showTests').classList.remove('primary');$('lessonArea').innerHTML=subjects[current].lessons.map((x,i)=>`<div class="term-card"><h3>${i+1}. ${x[0]}</h3><p>${x[1]}</p><p class="notice"><b>مثال / تذكّر:</b> ${x[2]||''}</p></div>`).join('')}
-function showTests(){$('lessonArea').classList.add('hidden');$('testArea').classList.remove('hidden');$('showTests').classList.add('primary');$('showLessons').classList.remove('primary');$('terms').innerHTML=[0,1,2].map((n)=>`<button class="${n===term?'primary':''}" onclick="chooseTerm(${n})">الفصل ${['الأول','الثاني','الثالث'][n]}</button>`).join('');renderExamList()}
-function chooseTerm(n){term=n;examIndex=n;$('terms').innerHTML=[0,1,2].map((x)=>`<button class="${x===term?'primary':''}" onclick="chooseTerm(${x})">الفصل ${['الأول','الثاني','الثالث'][x]}</button>`).join('');renderExamList()}
-function renderExamList(){$('examList').innerHTML=`<div class="term-card"><h3>${subjects[current].exams[term].title}</h3><p>السنة الخامسة ابتدائي — ${subjects[current].name}</p><p>نموذج تدريبي منظم على شكل ورقة اختبار مدرسية.</p><button class="primary" onclick="openExam(${term})">فتح ورقة الاختبار</button></div>`}
-function openExam(n){examIndex=n;const e=subjects[current].exams[n];$('subjectPage').classList.add('hidden');$('examPage').classList.remove('hidden');let h=`<article class="paper"><div class="paper-head"><div>الجمهورية الجزائرية الديمقراطية الشعبية<br>وزارة التربية الوطنية<br>مدرسة سراج التعليمية</div><div>المستوى: السنة الخامسة ابتدائي<br>الاسم واللقب: ........................<br>القسم: ............</div></div><div class="paper-title">${e.title} — ${subjects[current].name}</div><div class="paper-meta"><span>المدة: ${e.duration}</span><span>العلامة: /20</span></div>`;
-if(e.text)h+=`<h3>${current==='fr'?'Texte :':current==='en'?'Text:':'السند:'}</h3><div class="passage ${current==='fr'||current==='en'?'ltr':''}">${e.text}</div>`;
-e.parts.forEach(p=>{h+=`<div class="section-title">${p[0]}</div><ol class="${current==='fr'||current==='en'?'ltr':''}">`;p[1].forEach(q=>{h+=`<li>${q}<div class="line"></div></li>`});h+='</ol>';if(p[0].includes('الوضعية')||p[0].includes('Production')||p[0].includes('Task three'))h+='<div class="longline"></div><div class="longline"></div><div class="longline"></div><div class="longline"></div>'});
-h+='<p style="text-align:left;font-weight:bold">بالتوفيق والنجاح</p><p class="small">إعداد: مدرسة سراج التعليمية — نموذج تدريبي</p></article>';$('paperHost').innerHTML=h;$('keyHost').innerHTML='<h3>التصحيح النموذجي</h3>'+e.key.map((x,i)=>`<p><b>${i+1}.</b> ${x}</p>`).join('')+'<p class="small">تقبل الإجابات الصحيحة المكافئة. تصحح الوضعية الكتابية وفق احترام التعليمة وتنظيم الأفكار وسلامة اللغة.</p>';$('keyHost').classList.add('hidden')}
-function backToTests(){$('examPage').classList.add('hidden');$('subjectPage').classList.remove('hidden');showTests()}
-function toggleKey(show){$('keyHost').classList.toggle('hidden',!show);if(show)$('keyHost').scrollIntoView({behavior:'smooth',block:'start'})}
+
+let currentLevel="";
+let currentSubject="";
+let score=0;
+let answered=0;
+
+function hideAll(){
+ document.getElementById("home").classList.add("hidden");
+ document.getElementById("content").classList.add("hidden");
+ document.getElementById("about").classList.add("hidden");
+}
+
+function home(){
+ hideAll();
+ document.getElementById("home").classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+
+function showAbout(){
+ hideAll();
+ document.getElementById("about").classList.remove("hidden");
+}
+
+function openLevel(index){
+ currentLevel=levels[index].name;
+ hideAll();
+ document.getElementById("content").classList.remove("hidden");
+ document.getElementById("pageTitle").textContent="📚 "+currentLevel;
+ let html='<div class="grid">';
+ subjects.forEach((s,i)=>{
+  html+=`
+  <div class="card subject">
+   <div class="emoji">${s.icon}</div>
+   <div>
+    <h3>${s.name}</h3>
+    <button class="action" onclick="openLessons(${i})">📖 الدروس</button>
+    <button class="action gold" onclick="openBank(${i})">📝 بنك الاختبارات</button>
+    <button class="action" onclick="openExercises(${i})">✏️ التمارين</button>
+   </div>
+  </div>`;
+ });
+ html+='</div>';
+ document.getElementById("pageContent").innerHTML=html;
+ window.scrollTo(0,0);
+}
+
+function setPage(title,html){
+ document.getElementById("pageTitle").textContent=title;
+ document.getElementById("pageContent").innerHTML=html;
+ window.scrollTo(0,0);
+}
+
+function openLessons(index){
+ currentSubject=subjects[index].name;
+ let items=lessons[currentSubject]||[];
+ let html='<div class="welcome"><h3>📖 دروس '+currentSubject+'</h3>';
+ html+='<p>المستوى: '+currentLevel+'</p></div>';
+ items.forEach((item,i)=>{
+  html+=`
+  <div class="lesson">
+   <h3>📘 ${item}</h3>
+   <p>تعلم هذا الدرس وراجع أهم المعلومات والأمثلة.</p>
+   <button class="action" onclick="showLesson(${i})">فتح الدرس</button>
+  </div>`;
+ });
+ html+='<p>تتم إضافة المحتوى التفصيلي وفق المنهاج الجزائري لكل مستوى.</p>';
+ setPage("📖 فضاء الدروس",html);
+}
+
+function showLesson(i){
+ let item=lessons[currentSubject][i];
+ let examples={
+  "اللغة العربية":"تعلم القاعدة ثم طبقها على أمثلة من النصوص. اقرأ الجمل وحدد الكلمات المطلوبة.",
+  "الرياضيات":"راجع القاعدة الرياضية ثم أنجز العمليات باستعمال أمثلة متنوعة.",
+  "اللغة الفرنسية":"Lis la leçon, observe les exemples et entraîne-toi.",
+  "اللغة الإنجليزية":"Read the examples and practise the new words.",
+ };
+ setPage("📘 "+item,`
+ <div class="lesson">
+ <h2>${item}</h2>
+ <p>${examples[currentSubject]||"اقرأ الدرس جيداً، واستخرج الأفكار الأساسية، ثم أجب عن الأسئلة."}</p>
+ <h3>🎯 الهدف من الدرس</h3>
+ <p>فهم المعلومات وتطبيقها في تمارين متنوعة.</p>
+ <button class="action" onclick="openExercises(subjects.findIndex(s=>s.name===currentSubject))">انتقل إلى التمارين</button>
+ </div>`);
+}
+
+function openBank(index){
+ currentSubject=subjects[index].name;
+ let html=`
+ <div class="welcome">
+ <h3>📝 بنك اختبارات ${currentSubject}</h3>
+ <p>${currentLevel}</p>
+ <p>اختر الفصل الدراسي:</p>
+ </div>`;
+ for(let i=1;i<=3;i++){
+  html+=`
+  <div class="card" style="margin:12px 0">
+   <h3>📄 اختبارات الفصل ${i}</h3>
+   <p>نماذج للتدريب والمراجعة</p>
+   <button class="action" onclick="startQuiz()">ابدأ الاختبار التجريبي</button>
+  </div>`;
+ }
+ setPage("📝 بنك الاختبارات",html);
+}
+
+function openExercises(index){
+ currentSubject=subjects[index].name;
+ setPage("✏️ فضاء التمارين",`
+ <div class="welcome">
+ <h3>تمارين ${currentSubject}</h3>
+ <p>اختر الاختبار التجريبي لتقييم معلوماتك.</p>
+ <button class="action" onclick="startQuiz()">ابدأ التمارين</button>
+ </div>`);
+}
+
+const questions={
+ "اللغة العربية":[
+  {q:"ما نوع كلمة (يكتب)؟",a:["اسم","فعل","حرف"],c:1},
+  {q:"ما جمع كلمة كتاب؟",a:["كاتب","كتب","مكتبة"],c:1},
+  {q:"الجملة التي تبدأ بفعل تسمى؟",a:["جملة فعلية","جملة اسمية","كلمة"],c:0}
+ ],
+ "الرياضيات":[
+  {q:"كم يساوي 8 × 7 ؟",a:["54","56","64"],c:1},
+  {q:"كم يساوي 100 - 35 ؟",a:["65","75","55"],c:0},
+  {q:"نصف العدد 20 هو؟",a:["5","15","10"],c:2}
+ ],
+ "اللغة الفرنسية":[
+  {q:"Bonjour signifie:",a:["Bonsoir","Hello","Au revoir"],c:1},
+  {q:"Le pluriel de livre:",a:["Livres","Livre","Livrée"],c:0}
+ ],
+ "اللغة الإنجليزية":[
+  {q:"What is the colour of the sky?",a:["Blue","Green","Red"],c:0},
+  {q:"What is 2 + 3?",a:["Four","Five","Six"],c:1}
+ ],
+ "التربية الإسلامية":[
+  {q:"كم عدد أركان الإسلام؟",a:["خمسة","ثلاثة","ستة"],c:0},
+  {q:"ما اسم كتاب المسلمين؟",a:["الإنجيل","القرآن الكريم","التوراة"],c:1}
+ ],
+ "التاريخ والجغرافيا":[
+  {q:"في أي قارة تقع الجزائر؟",a:["آسيا","إفريقيا","أوروبا"],c:1}
+ ],
+ "العلوم":[
+  {q:"ما العضو الذي يضخ الدم؟",a:["القلب","الرئة","المعدة"],c:0}
+ ]
+};
+
+function startQuiz(){
+ score=0;
+ answered=0;
+ let qs=questions[currentSubject]||questions["اللغة العربية"];
+ let html=`<div class="welcome">
+ <h3>📝 اختبار ${currentSubject}</h3>
+ <p>أجب عن الأسئلة التالية.</p>
+ <p>المستوى: ${currentLevel}</p>
+ </div>`;
+ qs.forEach((q,i)=>{
+  html+=`<div class="question" id="question${i}">
+  <h3>السؤال ${i+1}: ${q.q}</h3>`;
+  q.a.forEach((a,j)=>{
+   html+=`<button class="answer" onclick="answer(${i},${j})">${a}</button>`;
+  });
+  html+='</div>';
+ });
+ html+='<div id="result"></div>';
+ setPage("اختبار تفاعلي",html);
+ window.quizQuestions=qs;
+}
+
+function answer(i,j){
+ let q=window.quizQuestions[i];
+ let box=document.getElementById("question"+i);
+ if(box.dataset.done)return;
+ box.dataset.done="1";
+ answered++;
+ let buttons=box.querySelectorAll(".answer");
+ buttons.forEach((b,k)=>{
+  b.disabled=true;
+  if(k===q.c)b.classList.add("correct");
+  if(k===j&&j!==q.c)b.classList.add("wrong");
+ });
+ if(j===q.c)score++;
+ if(answered===window.quizQuestions.length){
+  document.getElementById("result").innerHTML=
+  `🌟 نتيجتك: ${score} من ${window.quizQuestions.length}<br>
+  <button class="action" onclick="startQuiz()">إعادة الاختبار</button>`;
+ }
+}
+
+const levelBox=document.getElementById("levels");
+levels.forEach((level,i)=>{
+ let div=document.createElement("div");
+ div.className="card";
+ div.innerHTML=`
+ <div class="emoji">${level.icon}</div>
+ <h3>${level.name}</h3>
+ <p>دروس وتمارين واختبارات</p>
+ <button class="action" onclick="openLevel(${i})">الدخول إلى المستوى</button>`;
+ levelBox.appendChild(div);
+});
 </script>
-</body></html>
+</body>
+</html>
