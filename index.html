@@ -1,485 +1,155 @@
-HTML
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#173b63">
 <title>مدرسة سراج التعليمية</title>
-
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Tahoma,Arial,sans-serif;
- background:#f3f6fb;
- color:#24364b;
-}
-header{
- background:linear-gradient(135deg,#102d50,#24669a);
- color:white;
- padding:25px 15px;
- text-align:center;
- border-radius:0 0 25px 25px;
-}
-.logo{font-size:45px}
-header h1{margin:8px 0;font-size:27px}
-header p{color:#e2edf8;margin:5px}
-nav{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:8px;
- padding:15px 8px;
- background:white;
- position:sticky;
- top:0;
- z-index:10;
- box-shadow:0 2px 8px #0001;
-}
-button{
- border:0;
- cursor:pointer;
- font-family:inherit;
-}
-.navbtn{
- background:#edf3fa;
- color:#173b63;
- padding:11px 15px;
- border-radius:12px;
- font-weight:bold;
-}
-.navbtn:hover,.navbtn.active{
- background:#173b63;
- color:white;
-}
-main{
- max-width:1100px;
- margin:auto;
- padding:18px;
-}
-.welcome{
- background:white;
- border-radius:18px;
- padding:20px;
- margin-bottom:20px;
- box-shadow:0 3px 12px #0000000a;
-}
-h2{color:#173b63}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
- gap:13px;
-}
-.card{
- background:white;
- padding:18px 12px;
- border-radius:17px;
- text-align:center;
- box-shadow:0 3px 12px #0000000a;
- border:1px solid #e7edf4;
-}
-.card .emoji{font-size:35px}
-.card h3{font-size:16px;margin:10px 0;color:#173b63}
-.card p{font-size:12px;color:#718096}
-.action{
- background:#173b63;
- color:white;
- border-radius:11px;
- padding:11px 15px;
- margin:5px;
- font-weight:bold;
-}
-.action:hover{background:#286b9d}
-.gold{background:#d4a23c;color:#172b43}
-.back{
- background:#e8edf5;
- color:#173b63;
- padding:10px 17px;
- border-radius:10px;
- margin-bottom:15px;
-}
-.subject{
- display:flex;
- align-items:center;
- gap:12px;
- text-align:right;
-}
-.subject .emoji{font-size:32px}
-.subject .action{font-size:12px;padding:9px}
-.lesson{
- background:white;
- padding:17px;
- border-radius:14px;
- margin:12px 0;
- line-height:1.9;
- border-right:4px solid #d4a23c;
-}
-.question{
- background:white;
- border-radius:15px;
- padding:20px;
- margin:12px 0;
- line-height:2;
-}
-.answer{
- display:block;
- width:100%;
- text-align:right;
- padding:12px;
- background:#edf3fa;
- color:#173b63;
- margin:7px 0;
- border-radius:10px;
-}
-.answer:hover{background:#dceafa}
-.answer.correct{background:#d8f4df}
-.answer.wrong{background:#ffe0e0}
-footer{
- background:#173b63;
- color:white;
- text-align:center;
- padding:22px;
- margin-top:35px;
-}
-.hidden{display:none}
-#result{
- font-size:20px;
- font-weight:bold;
- color:#16834a;
- margin:15px 0;
-}
-input{
- padding:12px;
- border:1px solid #ccd6e3;
- border-radius:10px;
- width:100%;
- margin:8px 0;
- font-family:inherit;
-}
+:root{--navy:#173b63;--blue:#2676b8;--pale:#eef5fb;--gold:#e8b95b;--ink:#203247;--muted:#68798a;--line:#dce6ef}
+*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,#173b63,#287bb5);color:white;padding:22px 16px 25px;border-radius:0 0 24px 24px}
+header h1{font-size:23px;margin:0 0 7px}header p{margin:0;color:#e4eff8;font-size:13px}
+main{max-width:850px;margin:auto;padding:15px}
+nav{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 15px}
+nav button,.btn{border:0;border-radius:12px;padding:12px 8px;background:white;color:var(--navy);font-weight:bold;box-shadow:0 2px 8px #173b6312;font-size:14px}
+nav button.active,.btn.primary{background:var(--blue);color:white}
+.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:13px;box-shadow:0 4px 16px #173b6308}
+h2{font-size:18px;margin:0 0 13px;color:var(--navy)}h3{font-size:16px;margin:0 0 8px}
+label{display:block;font-size:13px;font-weight:bold;margin:10px 0 5px}
+input,select,textarea{width:100%;border:1px solid #cbd8e4;border-radius:10px;padding:11px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+textarea{min-height:115px;resize:vertical;line-height:1.8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{border:1px solid var(--line);cursor:pointer}.btn.danger{color:#b42318}.btn.small{padding:8px 11px;font-size:12px}
+.item{border:1px solid var(--line);border-radius:13px;padding:12px;margin:9px 0}
+.item p{white-space:pre-wrap;line-height:1.8;margin:8px 0;color:#3e5266;font-size:14px}
+.meta{font-size:12px;color:var(--muted);margin-bottom:7px}
+.tag{display:inline-block;background:var(--pale);color:var(--navy);padding:4px 8px;border-radius:20px;font-size:11px;margin:2px}
+.hidden{display:none!important}.lesson-picture{display:block;max-width:100%;max-height:520px;object-fit:contain;margin:14px auto;border:1px solid #dce6ef;border-radius:8px}.empty{text-align:center;color:var(--muted);padding:22px 5px}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:10px 0 25px}
+@media(max-width:520px){.row{grid-template-columns:1fr}nav{grid-template-columns:repeat(3,1fr)}nav button{font-size:12px;padding:11px 4px}}
+@media print{header,nav,.no-print,footer{display:none!important}body{background:white}.panel,.item{box-shadow:none;border:0}main{max-width:none;padding:0}.print-title{display:block!important}}
 </style>
 </head>
-
 <body>
-
 <header>
- <div class="logo">🏫</div>
- <h1>مدرسة سراج التعليمية</h1>
- <p>مدرستنا طريقنا نحو النجاح</p>
- <p>منصة التعليم الابتدائي الجزائرية</p>
+<h1>🌸 مدرسة سراج التعليمية</h1>
+<p>مدرستنا طريقنا نحو النجاح · مساحة خاصة لإعداد الدروس والفروض</p>
 </header>
-
-<nav>
- <button class="navbtn active" onclick="home()">🏠 الرئيسية</button>
- <button class="navbtn" onclick="showAbout()">🌟 عن المدرسة</button>
+<main>
+<nav class="no-print">
+<button class="active" data-tab="home">الرئيسية</button>
+<button data-tab="lesson">✍️ إضافة درس</button>
+<button data-tab="exam">📝 إنشاء فرض</button>
+<button data-tab="library">📚 الدروس</button>
+<button data-tab="tests">📋 الفروض</button>
+<button data-tab="backup">💾 النسخ الاحتياطي</button>
 </nav>
 
-<main>
-
-<section id="home">
- <div class="welcome">
-  <h2>🌷 مرحباً بك في فضاء سراج</h2>
-  <p>هنا تبدأ رحلة التعلم والتميز. اختر مستواك الدراسي وانطلق!</p>
- </div>
-
- <h2>📚 المستويات التعليمية</h2>
- <div class="grid" id="levels"></div>
+<section id="home" class="tab">
+<div class="panel">
+<h2>أهلاً بك في مدرسة سراج ❤️</h2>
+<p>من هنا يمكنك كتابة الدروس، إعداد الفروض والاختبارات، حفظها، ثم طباعتها أو تحويلها إلى PDF.</p>
+<div class="row">
+<div class="item"><div class="meta">الدروس المحفوظة</div><h2 id="lessonCount">0</h2></div>
+<div class="item"><div class="meta">الفروض المحفوظة</div><h2 id="examCount">0</h2></div>
+</div>
+<div class="actions">
+<button class="btn primary" onclick="showTab('lesson')">＋ كتابة درس جديد</button>
+<button class="btn primary" onclick="showTab('exam')">＋ إنشاء فرض جديد</button>
+</div>
+</div>
+<div class="panel"><h3>طريقة الاستعمال</h3><p>1. اختاري السنة والمادة. 2. اكتبي الدرس أو أسئلة الفرض. 3. اضغطي حفظ. 4. افتحي المكتبة أو بنك الفروض للطباعة والتعديل.</p></div>
 </section>
 
-<section id="content" class="hidden">
- <button class="back" onclick="home()">⬅ العودة للرئيسية</button>
- <h2 id="pageTitle"></h2>
- <div id="pageContent"></div>
+<section id="lesson" class="tab hidden">
+<div class="panel">
+<h2>✍️ كتابة درس جديد</h2>
+<input type="hidden" id="lessonId">
+<label>عنوان الدرس</label><input id="lessonTitle" placeholder="مثال: الجملة الاسمية">
+<div class="row">
+<div><label>السنة</label><select id="lessonLevel"></select></div>
+<div><label>المادة</label><select id="lessonSubject"></select></div>
+</div>
+<label>محتوى الدرس</label><textarea id="lessonBody" placeholder="اكتبي الدرس هنا..."></textarea>
+<label>إضافة صورة من الهاتف (اختياري)</label><input id="lessonImageFile" type="file" accept="image/*" onchange="previewLessonImage(event)">
+<div id="lessonImagePreview" class="hidden" style="margin-top:10px"><img id="lessonImagePreviewTag" alt="معاينة صورة الدرس" style="display:block;max-width:100%;max-height:260px;object-fit:contain;border:1px solid #dce6ef;border-radius:12px;padding:5px"><button type="button" class="btn small danger" onclick="removeLessonImage()">إزالة الصورة</button></div>
+<div class="actions"><button class="btn primary" onclick="saveLesson()">حفظ الدرس</button><button class="btn" onclick="clearLesson()">إفراغ</button></div>
+</div>
 </section>
 
-<section id="about" class="hidden">
- <button class="back" onclick="home()">⬅ العودة</button>
- <div class="welcome">
-  <h2>🌟 مدرسة سراج التعليمية</h2>
-  <p>مشروع تعليمي يهدف إلى مساعدة تلاميذ المرحلة الابتدائية على التعلم والتفوق.</p>
-  <p>نوفر فضاءً للدروس والتمارين والاختبارات لجميع المستويات.</p>
-  <h3>مدرستنا طريقنا نحو النجاح ❤️</h3>
- </div>
+<section id="exam" class="tab hidden">
+<div class="panel">
+<h2>📝 إنشاء فرض أو اختبار</h2>
+<input type="hidden" id="examId">
+<label>عنوان الفرض</label><input id="examTitle" placeholder="مثال: فرض الفصل الأول">
+<div class="row">
+<div><label>السنة</label><select id="examLevel"></select></div>
+<div><label>المادة</label><select id="examSubject"></select></div>
+</div>
+<div class="row">
+<div><label>الفصل</label><select id="examTerm"><option>الفصل الأول</option><option>الفصل الثاني</option><option>الفصل الثالث</option></select></div>
+<div><label>المدة</label><input id="examDuration" placeholder="مثال: ساعة واحدة"></div>
+</div>
+<label>تعليمة أو نص الفرض والأسئلة</label><textarea id="examBody" placeholder="التمرين الأول: ...&#10;التمرين الثاني: ...&#10;الوضعية الإدماجية: ..."></textarea>
+<label>ملاحظة أو سلم التنقيط (اختياري)</label><textarea id="examNote" placeholder="التنقيط: ... " style="min-height:70px"></textarea>
+<div class="actions"><button class="btn primary" onclick="saveExam()">حفظ الفرض</button><button class="btn" onclick="clearExam()">إفراغ</button></div>
+</div>
 </section>
 
+<section id="library" class="tab hidden">
+<div class="panel"><h2>📚 مكتبة الدروس</h2>
+<div class="row"><div><label>السنة</label><select id="filterLessonLevel" onchange="renderLessons()"><option value="">كل السنوات</option></select></div><div><label>المادة</label><select id="filterLessonSubject" onchange="renderLessons()"><option value="">كل المواد</option></select></div></div>
+<div id="lessonList"></div></div>
+</section>
+
+<section id="tests" class="tab hidden">
+<div class="panel"><h2>📋 بنك الفروض والاختبارات</h2>
+<div class="row"><div><label>السنة</label><select id="filterExamLevel" onchange="renderExams()"><option value="">كل السنوات</option></select></div><div><label>المادة</label><select id="filterExamSubject" onchange="renderExams()"><option value="">كل المواد</option></select></div></div>
+<div id="examList"></div></div>
+</section>
+
+<section id="backup" class="tab hidden">
+<div class="panel"><h2>💾 حفظ نسخة من أعمالك</h2>
+<p>احتفظي بنسخة احتياطية من الدروس والفروض في هاتفك، واستعملي الاستيراد لاسترجاعها عند الحاجة.</p>
+<div class="actions"><button class="btn primary" onclick="exportData()">تنزيل نسخة احتياطية</button><label class="btn" style="display:inline-block;margin:0">استرجاع نسخة<input type="file" id="importFile" accept=".json,application/json" onchange="importData(event)" style="display:none"></label></div>
+<p class="meta">مهم: البيانات محفوظة في متصفح هذا الهاتف. لا تمسحي بيانات المتصفح قبل تنزيل نسخة احتياطية.</p>
+</div>
+</section>
+<footer>مدرسة سراج التعليمية · إعداد خاص</footer>
 </main>
-
-<footer>
- <h3>🏫 مدرسة سراج التعليمية</h3>
- <p>مدرستنا طريقنا نحو النجاح</p>
- <small>جميع الحقوق محفوظة © 2026</small>
-</footer>
-
 <script>
-const levels=[
- {name:"السنة الأولى ابتدائي",icon:"🌸"},
- {name:"السنة الثانية ابتدائي",icon:"🌷"},
- {name:"السنة الثالثة ابتدائي",icon:"📘"},
- {name:"السنة الرابعة ابتدائي",icon:"⭐"},
- {name:"السنة الخامسة ابتدائي",icon:"🎓"}
-];
-
-const subjects=[
- {name:"اللغة العربية",icon:"📖"},
- {name:"الرياضيات",icon:"➗"},
- {name:"اللغة الفرنسية",icon:"🇫🇷"},
- {name:"اللغة الإنجليزية",icon:"🇬🇧"},
- {name:"التربية الإسلامية",icon:"🕌"},
- {name:"التاريخ والجغرافيا",icon:"🌍"},
- {name:"العلوم",icon:"🔬"}
-];
-
-const lessons={
- "اللغة العربية":[
-  "القراءة وفهم النص",
-  "الجملة الاسمية والجملة الفعلية",
-  "الاسم والفعل والحرف",
-  "المفرد والمثنى والجمع",
-  "الفاعل والمفعول به",
-  "التعبير الكتابي"
- ],
- "الرياضيات":[
-  "الأعداد والأرقام",
-  "الجمع والطرح",
-  "الضرب والقسمة",
-  "الكسور",
-  "القياس والتحويلات",
-  "الهندسة والأشكال"
- ],
- "اللغة الفرنسية":[
-  "Lecture et compréhension",
-  "Le nom et le verbe",
-  "Les adjectifs",
-  "La phrase",
-  "Production écrite"
- ],
- "اللغة الإنجليزية":[
-  "Greetings",
-  "Numbers and colours",
-  "Family",
-  "Animals",
-  "Days and months"
- ],
- "التربية الإسلامية":[
-  "القرآن الكريم",
-  "العقيدة الإسلامية",
-  "العبادات",
-  "الأخلاق والآداب"
- ],
- "التاريخ والجغرافيا":[
-  "الزمن والتاريخ",
-  "المعالم التاريخية",
-  "الموقع الجغرافي",
-  "البيئة والطبيعة"
- ],
- "العلوم":[
-  "جسم الإنسان",
-  "الحيوانات والنباتات",
-  "التغذية",
-  "الماء والهواء"
- ]
-};
-
-let currentLevel="";
-let currentSubject="";
-let score=0;
-let answered=0;
-
-function hideAll(){
- document.getElementById("home").classList.add("hidden");
- document.getElementById("content").classList.add("hidden");
- document.getElementById("about").classList.add("hidden");
-}
-
-function home(){
- hideAll();
- document.getElementById("home").classList.remove("hidden");
- window.scrollTo(0,0);
-}
-
-function showAbout(){
- hideAll();
- document.getElementById("about").classList.remove("hidden");
-}
-
-function openLevel(index){
- currentLevel=levels[index].name;
- hideAll();
- document.getElementById("content").classList.remove("hidden");
- document.getElementById("pageTitle").textContent="📚 "+currentLevel;
- let html='<div class="grid">';
- subjects.forEach((s,i)=>{
-  html+=`
-  <div class="card subject">
-   <div class="emoji">${s.icon}</div>
-   <div>
-    <h3>${s.name}</h3>
-    <button class="action" onclick="openLessons(${i})">📖 الدروس</button>
-    <button class="action gold" onclick="openBank(${i})">📝 بنك الاختبارات</button>
-    <button class="action" onclick="openExercises(${i})">✏️ التمارين</button>
-   </div>
-  </div>`;
- });
- html+='</div>';
- document.getElementById("pageContent").innerHTML=html;
- window.scrollTo(0,0);
-}
-
-function setPage(title,html){
- document.getElementById("pageTitle").textContent=title;
- document.getElementById("pageContent").innerHTML=html;
- window.scrollTo(0,0);
-}
-
-function openLessons(index){
- currentSubject=subjects[index].name;
- let items=lessons[currentSubject]||[];
- let html='<div class="welcome"><h3>📖 دروس '+currentSubject+'</h3>';
- html+='<p>المستوى: '+currentLevel+'</p></div>';
- items.forEach((item,i)=>{
-  html+=`
-  <div class="lesson">
-   <h3>📘 ${item}</h3>
-   <p>تعلم هذا الدرس وراجع أهم المعلومات والأمثلة.</p>
-   <button class="action" onclick="showLesson(${i})">فتح الدرس</button>
-  </div>`;
- });
- html+='<p>تتم إضافة المحتوى التفصيلي وفق المنهاج الجزائري لكل مستوى.</p>';
- setPage("📖 فضاء الدروس",html);
-}
-
-function showLesson(i){
- let item=lessons[currentSubject][i];
- let examples={
-  "اللغة العربية":"تعلم القاعدة ثم طبقها على أمثلة من النصوص. اقرأ الجمل وحدد الكلمات المطلوبة.",
-  "الرياضيات":"راجع القاعدة الرياضية ثم أنجز العمليات باستعمال أمثلة متنوعة.",
-  "اللغة الفرنسية":"Lis la leçon, observe les exemples et entraîne-toi.",
-  "اللغة الإنجليزية":"Read the examples and practise the new words.",
- };
- setPage("📘 "+item,`
- <div class="lesson">
- <h2>${item}</h2>
- <p>${examples[currentSubject]||"اقرأ الدرس جيداً، واستخرج الأفكار الأساسية، ثم أجب عن الأسئلة."}</p>
- <h3>🎯 الهدف من الدرس</h3>
- <p>فهم المعلومات وتطبيقها في تمارين متنوعة.</p>
- <button class="action" onclick="openExercises(subjects.findIndex(s=>s.name===currentSubject))">انتقل إلى التمارين</button>
- </div>`);
-}
-
-function openBank(index){
- currentSubject=subjects[index].name;
- let html=`
- <div class="welcome">
- <h3>📝 بنك اختبارات ${currentSubject}</h3>
- <p>${currentLevel}</p>
- <p>اختر الفصل الدراسي:</p>
- </div>`;
- for(let i=1;i<=3;i++){
-  html+=`
-  <div class="card" style="margin:12px 0">
-   <h3>📄 اختبارات الفصل ${i}</h3>
-   <p>نماذج للتدريب والمراجعة</p>
-   <button class="action" onclick="startQuiz()">ابدأ الاختبار التجريبي</button>
-  </div>`;
- }
- setPage("📝 بنك الاختبارات",html);
-}
-
-function openExercises(index){
- currentSubject=subjects[index].name;
- setPage("✏️ فضاء التمارين",`
- <div class="welcome">
- <h3>تمارين ${currentSubject}</h3>
- <p>اختر الاختبار التجريبي لتقييم معلوماتك.</p>
- <button class="action" onclick="startQuiz()">ابدأ التمارين</button>
- </div>`);
-}
-
-const questions={
- "اللغة العربية":[
-  {q:"ما نوع كلمة (يكتب)؟",a:["اسم","فعل","حرف"],c:1},
-  {q:"ما جمع كلمة كتاب؟",a:["كاتب","كتب","مكتبة"],c:1},
-  {q:"الجملة التي تبدأ بفعل تسمى؟",a:["جملة فعلية","جملة اسمية","كلمة"],c:0}
- ],
- "الرياضيات":[
-  {q:"كم يساوي 8 × 7 ؟",a:["54","56","64"],c:1},
-  {q:"كم يساوي 100 - 35 ؟",a:["65","75","55"],c:0},
-  {q:"نصف العدد 20 هو؟",a:["5","15","10"],c:2}
- ],
- "اللغة الفرنسية":[
-  {q:"Bonjour signifie:",a:["Bonsoir","Hello","Au revoir"],c:1},
-  {q:"Le pluriel de livre:",a:["Livres","Livre","Livrée"],c:0}
- ],
- "اللغة الإنجليزية":[
-  {q:"What is the colour of the sky?",a:["Blue","Green","Red"],c:0},
-  {q:"What is 2 + 3?",a:["Four","Five","Six"],c:1}
- ],
- "التربية الإسلامية":[
-  {q:"كم عدد أركان الإسلام؟",a:["خمسة","ثلاثة","ستة"],c:0},
-  {q:"ما اسم كتاب المسلمين؟",a:["الإنجيل","القرآن الكريم","التوراة"],c:1}
- ],
- "التاريخ والجغرافيا":[
-  {q:"في أي قارة تقع الجزائر؟",a:["آسيا","إفريقيا","أوروبا"],c:1}
- ],
- "العلوم":[
-  {q:"ما العضو الذي يضخ الدم؟",a:["القلب","الرئة","المعدة"],c:0}
- ]
-};
-
-function startQuiz(){
- score=0;
- answered=0;
- let qs=questions[currentSubject]||questions["اللغة العربية"];
- let html=`<div class="welcome">
- <h3>📝 اختبار ${currentSubject}</h3>
- <p>أجب عن الأسئلة التالية.</p>
- <p>المستوى: ${currentLevel}</p>
- </div>`;
- qs.forEach((q,i)=>{
-  html+=`<div class="question" id="question${i}">
-  <h3>السؤال ${i+1}: ${q.q}</h3>`;
-  q.a.forEach((a,j)=>{
-   html+=`<button class="answer" onclick="answer(${i},${j})">${a}</button>`;
-  });
-  html+='</div>';
- });
- html+='<div id="result"></div>';
- setPage("اختبار تفاعلي",html);
- window.quizQuestions=qs;
-}
-
-function answer(i,j){
- let q=window.quizQuestions[i];
- let box=document.getElementById("question"+i);
- if(box.dataset.done)return;
- box.dataset.done="1";
- answered++;
- let buttons=box.querySelectorAll(".answer");
- buttons.forEach((b,k)=>{
-  b.disabled=true;
-  if(k===q.c)b.classList.add("correct");
-  if(k===j&&j!==q.c)b.classList.add("wrong");
- });
- if(j===q.c)score++;
- if(answered===window.quizQuestions.length){
-  document.getElementById("result").innerHTML=
-  `🌟 نتيجتك: ${score} من ${window.quizQuestions.length}<br>
-  <button class="action" onclick="startQuiz()">إعادة الاختبار</button>`;
- }
-}
-
-const levelBox=document.getElementById("levels");
-levels.forEach((level,i)=>{
- let div=document.createElement("div");
- div.className="card";
- div.innerHTML=`
- <div class="emoji">${level.icon}</div>
- <h3>${level.name}</h3>
- <p>دروس وتمارين واختبارات</p>
- <button class="action" onclick="openLevel(${i})">الدخول إلى المستوى</button>`;
- levelBox.appendChild(div);
-});
+const levels=['السنة الأولى ابتدائي','السنة الثانية ابتدائي','السنة الثالثة ابتدائي','السنة الرابعة ابتدائي','السنة الخامسة ابتدائي'];
+const subjects=['اللغة العربية','الرياضيات','اللغة الفرنسية','اللغة الإنجليزية','التربية الإسلامية','التربية العلمية','التربية المدنية','التاريخ والجغرافيا'];
+let lessons=read('siraj_lessons'), exams=read('siraj_exams');
+function read(k){try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return []}}
+function write(){localStorage.setItem('siraj_lessons',JSON.stringify(lessons));localStorage.setItem('siraj_exams',JSON.stringify(exams));counts()}
+function fillSelect(id,arr,all=false){let el=document.getElementById(id);if(!el)return;el.innerHTML=(all?'<option value="">كل الخيارات</option>':'')+arr.map(x=>`<option>${x}</option>`).join('')}
+['lessonLevel','examLevel'].forEach(id=>fillSelect(id,levels));
+['lessonSubject','examSubject'].forEach(id=>fillSelect(id,subjects));
+['filterLessonLevel','filterExamLevel'].forEach(id=>fillSelect(id,levels,true));
+['filterLessonSubject','filterExamSubject'].forEach(id=>fillSelect(id,subjects,true));
+function showTab(id){document.querySelectorAll('.tab').forEach(x=>x.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));if(id==='library')renderLessons();if(id==='tests')renderExams();window.scrollTo(0,0)}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+function counts(){document.getElementById('lessonCount').textContent=lessons.length;document.getElementById('examCount').textContent=exams.length}
+function clearLesson(){['lessonId','lessonTitle','lessonBody'].forEach(id=>document.getElementById(id).value='');document.getElementById('lessonImageFile').value='';document.getElementById('lessonImagePreview').classList.add('hidden');document.getElementById('lessonImagePreviewTag').src='';currentLessonImage='';document.getElementById('lessonLevel').selectedIndex=0;document.getElementById('lessonSubject').selectedIndex=0}
+let currentLessonImage='';
+function previewLessonImage(event){const file=event.target.files&&event.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){alert('اختاري صورة من الهاتف');event.target.value='';return}if(file.size>2*1024*1024){alert('اختاري صورة أقل من 2 ميغابايت');event.target.value='';return}const reader=new FileReader();reader.onload=()=>{currentLessonImage=reader.result;document.getElementById('lessonImagePreviewTag').src=currentLessonImage;document.getElementById('lessonImagePreview').classList.remove('hidden')};reader.readAsDataURL(file)}
+function removeLessonImage(){currentLessonImage='';document.getElementById('lessonImageFile').value='';document.getElementById('lessonImagePreviewTag').src='';document.getElementById('lessonImagePreview').classList.add('hidden')}
+function saveLesson(){let title=lessonTitle.value.trim(),body=lessonBody.value.trim();if(!title||!body){alert('اكتبي عنوان الدرس ومحتواه أولاً');return}let obj={id:lessonId.value||String(Date.now()),title,level:lessonLevel.value,subject:lessonSubject.value,body,image:currentLessonImage||'',date:new Date().toLocaleDateString('ar-DZ')};let i=lessons.findIndex(x=>x.id===obj.id);if(i>=0)lessons[i]=obj;else lessons.unshift(obj);write();clearLesson();alert('تم حفظ الدرس بنجاح 🌸');showTab('library')}
+function editLesson(id){let x=lessons.find(a=>a.id===id);lessonId.value=x.id;lessonTitle.value=x.title;lessonLevel.value=x.level;lessonSubject.value=x.subject;lessonBody.value=x.body;currentLessonImage=x.image||'';if(currentLessonImage){lessonImagePreviewTag.src=currentLessonImage;lessonImagePreview.classList.remove('hidden')}else{lessonImagePreview.classList.add('hidden');lessonImagePreviewTag.src=''}lessonImageFile.value='';showTab('lesson')}
+function delLesson(id){if(confirm('هل تريدين حذف هذا الدرس؟')){lessons=lessons.filter(x=>x.id!==id);write();renderLessons()}}
+function renderLessons(){let arr=lessons.filter(x=>(!filterLessonLevel.value||x.level===filterLessonLevel.value)&&(!filterLessonSubject.value||x.subject===filterLessonSubject.value));lessonList.innerHTML=arr.length?arr.map(x=>`<div class="item"><h3>${esc(x.title)}</h3><div class="meta">${esc(x.level)} · ${esc(x.subject)} · ${esc(x.date||'')}</div><p>${esc(x.body)}</p>${x.image?`<img class="lesson-picture" src="${x.image}" alt="صورة توضيحية للدرس">`:``}<div class="actions no-print"><button class="btn small" onclick="printOne('lesson','${x.id}')">طباعة / PDF</button><button class="btn small" onclick="editLesson('${x.id}')">تعديل</button><button class="btn small danger" onclick="delLesson('${x.id}')">حذف</button></div></div>`).join(''):'<div class="empty">لا توجد دروس محفوظة بعد.</div>'}
+function clearExam(){['examId','examTitle','examDuration','examBody','examNote'].forEach(id=>document.getElementById(id).value='');examTerm.selectedIndex=0;examLevel.selectedIndex=0;examSubject.selectedIndex=0}
+function saveExam(){let title=examTitle.value.trim(),body=examBody.value.trim();if(!title||!body){alert('اكتبي عنوان الفرض والأسئلة أولاً');return}let obj={id:examId.value||String(Date.now()),title,level:examLevel.value,subject:examSubject.value,term:examTerm.value,duration:examDuration.value,body,note:examNote.value,date:new Date().toLocaleDateString('ar-DZ')};let i=exams.findIndex(x=>x.id===obj.id);if(i>=0)exams[i]=obj;else exams.unshift(obj);write();clearExam();alert('تم حفظ الفرض بنجاح 🌸');showTab('tests')}
+function editExam(id){let x=exams.find(a=>a.id===id);examId.value=x.id;examTitle.value=x.title;examLevel.value=x.level;examSubject.value=x.subject;examTerm.value=x.term;examDuration.value=x.duration||'';examBody.value=x.body;examNote.value=x.note||'';showTab('exam')}
+function delExam(id){if(confirm('هل تريدين حذف هذا الفرض؟')){exams=exams.filter(x=>x.id!==id);write();renderExams()}}
+function renderExams(){let arr=exams.filter(x=>(!filterExamLevel.value||x.level===filterExamLevel.value)&&(!filterExamSubject.value||x.subject===filterExamSubject.value));examList.innerHTML=arr.length?arr.map(x=>`<div class="item"><h3>${esc(x.title)}</h3><div class="meta">${esc(x.level)} · ${esc(x.subject)} · ${esc(x.term)} · ${esc(x.date||'')}</div><p>${esc(x.body)}${x.note?'\n\n'+esc(x.note):''}</p><div class="actions no-print"><button class="btn small" onclick="printOne('exam','${x.id}')">طباعة / PDF</button><button class="btn small" onclick="editExam('${x.id}')">تعديل</button><button class="btn small danger" onclick="delExam('${x.id}')">حذف</button></div></div>`).join(''):'<div class="empty">لا توجد فروض محفوظة بعد.</div>'}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function printOne(type,id){let x=(type==='lesson'?lessons:exams).find(a=>a.id===id);let extra=type==='exam'?`<p><b>${esc(x.term)} ${x.duration?' · المدة: '+esc(x.duration):''}</b></p>`:'';let picture=type==='lesson'&&x.image?`<img src="${x.image}" style="display:block;max-width:100%;max-height:520px;object-fit:contain;margin:16px auto">`:'';let note=type==='exam'&&x.note?`<p>${esc(x.note)}</p>`:'';let w=window.open('','_blank');if(!w){alert('اسمحي بفتح نافذة الطباعة من المتصفح');return}w.document.write(`<html lang="ar" dir="rtl"><meta charset="utf-8"><title>${esc(x.title)}</title><style>body{font-family:Tahoma,Arial;padding:28px;line-height:2;color:#172b42}h1{text-align:center;color:#173b63}hr{margin:20px 0} .head{text-align:center}</style><div class="head"><h1>مدرسة سراج التعليمية</h1><b>${esc(x.level)} · ${esc(x.subject)}</b></div><hr><h2>${esc(x.title)}</h2>${extra}<p style="white-space:pre-wrap">${esc(x.body)}</p>${picture}${note}<hr><p>الاسم واللقب: ..............................................　 القسم: ....................</p><script>window.onload=()=>window.print()<\/script></html>`);w.document.close()}
+function exportData(){let blob=new Blob([JSON.stringify({lessons,exams},null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='نسخة-مدرسة-سراج.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d.lessons)||!Array.isArray(d.exams))throw 0;if(confirm('سيتم استبدال البيانات الحالية بالنسخة المختارة. هل توافقين؟')){lessons=d.lessons;exams=d.exams;write();alert('تم استرجاع النسخة بنجاح');showTab('home')}}catch(err){alert('الملف غير صالح أو ليس نسخة مدرسة سراج')}};r.readAsText(f);e.target.value=''}
+counts();
 </script>
-</body>
-</html>
+</body></html>
